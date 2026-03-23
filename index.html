@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus | Finance for the Future</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-[#050810] text-white font-sans overflow-x-hidden selection:bg-[#5bc0be]/30 selection:text-[#5bc0be]">
+    <!-- Preloader -->
+    <div id="preloader" class="flex flex-col items-center justify-center">
+        <div class="relative w-16 h-16">
+            <div class="absolute inset-0 border-2 border-[#5bc0be]/20 rounded-full"></div>
+            <div class="absolute inset-0 border-t-2 border-[#5bc0be] rounded-full animate-spin"></div>
+        </div>
+        <div class="mt-6 font-mono text-[10px] tracking-[0.3em] text-[#5bc0be] uppercase animate-pulse">Initializing Secure Layer</div>
+    </div>
+
+    <!-- Custom Cursor Removal -->
+    
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 transition-all duration-500 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <div class="flex items-center gap-2 group cursor-pointer">
+                <a href="index.html" class="flex items-center gap-2">
+                    <div class="w-8 h-8 bg-[#5bc0be] rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-[#050810]"></i>
+                    </div>
+                    <h1 class="text-xl font-bold tracking-tighter text-white">NEXUS<span class="text-[#5bc0be]">.</span></h1>
+                </a>
+            </div>
+            
+            <div class="hidden md:flex items-center space-x-10 text-[13px] font-medium text-gray-400">
+                <a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a>
+                <a href="pricing.html" class="hover:text-white transition-colors duration-300">Pricing</a>
+                <a href="#features" class="hover:text-white transition-colors duration-300">Features</a>
+            </div>
+
+            <div class="flex items-center space-x-6">
+                <a href="download.html" class="text-[13px] font-semibold text-gray-300 hover:text-white transition cursor-pointer">Log in</a>
+                <a href="download.html" class="bg-white text-[#050810] px-6 py-2.5 rounded-full text-[13px] font-bold hover:bg-[#5bc0be] transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer">Open Account</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <main class="max-w-7xl mx-auto px-6 pt-32 pb-24 lg:pt-52 lg:pb-40 grid lg:grid-cols-2 gap-16 items-center relative">
+        <div class="z-10 relative animate-on-scroll">
+            <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-1.5 rounded-full text-[12px] text-[#5bc0be] font-medium mb-8 hover:bg-white/10 transition-all cursor-pointer group">
+                <span class="flex h-2 w-2 rounded-full bg-[#5bc0be] animate-pulse"></span>
+                New: Zero-fee International Transfers
+                <i data-lucide="chevron-right" class="w-3 h-3 group-hover:translate-x-0.5 transition-transform"></i>
+            </div>
+            <h2 class="text-6xl lg:text-[84px] font-extrabold leading-[0.95] mb-8 tracking-tighter">
+                Finance for <br/>the <span class="text-transparent bg-clip-text bg-gradient-to-br from-[#5bc0be] via-[#5bc0be] to-blue-400">Future.</span>
+            </h2>
+            <p class="text-lg text-gray-400 mb-12 max-w-lg leading-relaxed">
+                Experience the next generation of banking. Intelligent cards, real-time insights, and high-yield accounts designed for global citizens.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="download.html" class="bg-white text-[#050810] px-10 py-4 rounded-full font-bold text-sm hover:bg-[#5bc0be] transition-all duration-300 shadow-xl shadow-white/5 active:scale-95 text-center">Open Free Account</a>
+                <a href="#features" class="bg-white/5 border border-white/10 px-10 py-4 rounded-full font-bold text-sm hover:bg-white/10 transition-all duration-300 backdrop-blur-md active:scale-95 text-center">View Features</a>
+            </div>
+            
+            <div class="mt-16 flex flex-wrap items-center gap-x-12 gap-y-6">
+                <div class="flex flex-col">
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-[#5bc0be] uppercase mb-2">Security Standard</span>
+                    <div class="flex gap-4 opacity-40 grayscale hover:grayscale-0 transition-all duration-500">
+                        <i data-lucide="shield-check" class="w-5 h-5"></i>
+                        <i data-lucide="lock" class="w-5 h-5"></i>
+                        <i data-lucide="key-round" class="w-5 h-5"></i>
+                    </div>
+                </div>
+                <div class="h-10 w-px bg-white/10 hidden md:block"></div>
+                <div class="flex flex-col">
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-gray-500 uppercase mb-1">Global Users</span>
+                    <div class="flex -space-x-3">
+                        <div class="w-8 h-8 rounded-full border-2 border-[#050810] bg-gray-800 flex items-center justify-center text-[10px] font-bold">JD</div>
+                        <div class="w-8 h-8 rounded-full border-2 border-[#050810] bg-[#3a506b] flex items-center justify-center text-[10px] font-bold">AM</div>
+                        <div class="w-8 h-8 rounded-full border-2 border-[#050810] bg-[#5bc0be] flex items-center justify-center text-[10px] font-bold">SK</div>
+                        <div class="w-8 h-8 rounded-full border-2 border-[#050810] bg-white text-[#050810] flex items-center justify-center text-[10px] font-bold">+12k</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="relative z-10 hidden lg:block">
+            <!-- Animated Background Grid -->
+            <div class="absolute inset-0 -m-20 opacity-20 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]">
+                <svg class="h-full w-full stroke-white/10" fill="none">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M0 40V.5H40" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
+            </div>
+
+            <div class="relative w-full aspect-square flex items-center justify-center">
+                <!-- Decorative Glows -->
+                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#5bc0be]/10 rounded-full blur-[120px] animate-pulse"></div>
+
+                <!-- Floating Activity Bubble 1 -->
+                <div class="absolute top-0 right-10 bg-white/5 backdrop-blur-2xl border border-white/10 p-4 rounded-2xl shadow-2xl animate-float-slow z-30">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-green-500/20 rounded-full flex items-center justify-center text-green-400">
+                            <i data-lucide="check" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Payment Approved</div>
+                            <div class="text-sm font-bold">+$1,240.00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Activity Bubble 2 -->
+                <div class="absolute bottom-20 left-0 bg-white/5 backdrop-blur-2xl border border-white/10 p-4 rounded-2xl shadow-2xl animate-float z-30" style="animation-delay: -2s;">
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 bg-[#5bc0be]/20 rounded-full flex items-center justify-center text-[#5bc0be]">
+                            <i data-lucide="shield-check" class="w-4 h-4"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Security Guard</div>
+                            <div class="text-sm font-bold">Active Shield</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Visual: Premium Mock Card -->
+                <div class="relative z-20 w-[440px] h-[280px] bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-3xl border border-white/20 rounded-[2.5rem] p-10 flex flex-col justify-between shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] floating-card hover:scale-105 transition-transform duration-700">
+                    <div class="flex justify-between items-start">
+                        <div class="flex flex-col gap-1">
+                            <div class="text-[10px] font-bold tracking-[0.3em] uppercase opacity-50">Virtual Card</div>
+                            <div class="text-2xl font-black tracking-tighter">NEXUS<span class="text-[#5bc0be]">.</span></div>
+                        </div>
+                        <div class="w-12 h-10 bg-white/10 rounded-lg flex items-center justify-center border border-white/10">
+                            <i data-lucide="contactless" class="w-6 h-6 text-white/80"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="flex flex-col gap-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-9 bg-gradient-to-br from-yellow-400/20 to-yellow-600/20 rounded-md border border-yellow-500/30 flex items-center justify-center overflow-hidden relative">
+                                <div class="absolute inset-0 grid grid-cols-3 gap-px opacity-30">
+                                    <div class="border-b border-r border-yellow-500/50"></div>
+                                    <div class="border-b border-r border-yellow-500/50"></div>
+                                    <div class="border-b border-yellow-500/50"></div>
+                                    <div class="border-r border-yellow-500/50"></div>
+                                    <div class="border-r border-yellow-500/50"></div>
+                                    <div></div>
+                                </div>
+                            </div>
+                            <div class="font-mono text-2xl tracking-[0.15em] text-white/90">•••• •••• •••• 4092</div>
+                        </div>
+                        <div class="flex justify-between items-end">
+                            <div class="flex flex-col gap-1">
+                                <span class="text-[8px] uppercase tracking-widest opacity-40">Card Holder</span>
+                                <span class="text-xs font-semibold tracking-wide">ALEXANDER MORGAN</span>
+                            </div>
+                            <div class="flex flex-col gap-1 items-end">
+                                <span class="text-[8px] uppercase tracking-widest opacity-40">Expires</span>
+                                <span class="text-xs font-semibold tracking-wide">12 / 28</span>
+                            </div>
+                            <div class="relative w-12 h-8">
+                                <div class="absolute right-0 w-8 h-8 rounded-full bg-red-500/80 mix-blend-screen"></div>
+                                <div class="absolute right-4 w-8 h-8 rounded-full bg-orange-400/80 mix-blend-screen"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Floating Elements -->
+                <div class="absolute -bottom-10 -right-10 bg-white/5 backdrop-blur-2xl border border-white/10 p-6 rounded-3xl shadow-2xl animate-bounce-slow">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 bg-[#5bc0be]/20 rounded-full flex items-center justify-center text-[#5bc0be]">
+                            <i data-lucide="trending-up" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Savings Yield</div>
+                            <div class="text-lg font-bold">4.25% APY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Stats Section -->
+    <section class="border-y border-gray-800 bg-[#1c2541]/30">
+        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-sm font-semibold uppercase tracking-wider text-gray-400">
+            <div class="animate-on-scroll">
+                <div class="text-4xl font-bold text-white mb-2 font-mono stat-number">$12B+</div>
+                Processed
+            </div>
+            <div class="animate-on-scroll" style="transition-delay: 0.1s;">
+                <div class="text-4xl font-bold text-white mb-2 font-mono stat-number">2M+</div>
+                Active Users
+            </div>
+            <div class="animate-on-scroll" style="transition-delay: 0.2s;">
+                <div class="text-4xl font-bold text-white mb-2 font-mono stat-number">150+</div>
+                Countries
+            </div>
+            <div class="animate-on-scroll" style="transition-delay: 0.3s;">
+                <div class="text-4xl font-bold text-white mb-2 font-mono stat-number">99.9%</div>
+                Uptime
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="max-w-7xl mx-auto px-6 py-32 pb-48">
+        <div class="text-center mb-24 animate-on-scroll">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Everything you need to <span class="text-[#5bc0be]">scale.</span></h2>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">We've reimagined banking from the ground up to give you more control, better insights, and faster growth.</p>
+        </div>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="group bg-white/[0.02] border border-white/5 p-10 rounded-[2.5rem] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 animate-on-scroll cursor-pointer">
+                <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Smart Analytics</h3>
+                <p class="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors">Track your spending automatically. Our AI categorizes your expenses so you always know where your money goes.</p>
+            </div>
+            
+            <!-- Feature 2 -->
+            <div class="group bg-gradient-to-br from-[#5bc0be]/10 to-transparent border border-[#5bc0be]/20 p-10 rounded-[2.5rem] hover:border-[#5bc0be]/40 transition-all duration-500 relative overflow-hidden animate-on-scroll cursor-pointer">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-[#5bc0be]/10 blur-[50px] -mr-16 -mt-16"></div>
+                <div class="w-14 h-14 bg-[#5bc0be]/20 rounded-2xl flex items-center justify-center text-[#5bc0be] mb-8 group-hover:rotate-12 transition-all duration-500">
+                    <i data-lucide="globe" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Global Transfers</h3>
+                <p class="text-gray-400 leading-relaxed">Send money to over 150 countries instantly holding real exchange rates with absolute zero hidden fees.</p>
+            </div>
+            
+            <!-- Feature 3 -->
+            <div class="group bg-white/[0.02] border border-white/5 p-10 rounded-[2.5rem] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 animate-on-scroll cursor-pointer">
+                <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-400 mb-8 group-hover:scale-110 transition-transform duration-500">
+                    <i data-lucide="zap" class="w-7 h-7"></i>
+                </div>
+                <h3 class="text-xl font-bold mb-4">Automated Savings</h3>
+                <p class="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors">Set rules to auto-save based on your income, or round up your daily purchases into an investment portfolio.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Preview Section -->
+    <section class="py-32 bg-[#080b14] relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(91,192,190,0.05),transparent)] pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-24 items-center">
+            <div class="relative animate-on-scroll">
+                <div class="absolute inset-0 bg-[#5bc0be] opacity-10 blur-[120px] rounded-full"></div>
+                <!-- Premium Phone Frame -->
+                <div class="bg-[#050810] rounded-[3.5rem] border-[12px] border-[#1a1f2e] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden relative z-10 aspect-[9/19] max-w-[320px] mx-auto ring-1 ring-white/10">
+                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-[#1a1f2e] rounded-b-3xl z-20"></div>
+                    
+                    <!-- Fake App UI -->
+                    <div class="p-8 h-full flex flex-col pt-12">
+                        <div class="flex justify-between items-center mb-10">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Available Balance</p>
+                                <p class="text-3xl font-bold">$42,091<span class="text-gray-500 text-lg">.50</span></p>
+                            </div>
+                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-white/5 flex items-center justify-center">
+                                <i data-lucide="bell" class="w-5 h-5 text-gray-400"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-gradient-to-br from-[#1c2541] to-[#0b132b] rounded-3xl p-6 mb-10 border border-white/5 shadow-xl relative overflow-hidden group cursor-pointer">
+                            <div class="absolute top-0 right-0 p-4 opacity-20">
+                                <i data-lucide="wifi" class="w-4 h-4 rotate-90"></i>
+                            </div>
+                            <p class="font-mono text-xs tracking-[0.2em] text-[#5bc0be] mb-6">•••• 4092</p>
+                            <div class="flex justify-between items-end">
+                                <div>
+                                    <p class="text-[8px] uppercase tracking-widest text-gray-500 mb-1">Limit Used</p>
+                                    <p class="text-xs font-bold">$2,400.00 <span class="text-[10px] text-gray-600 font-normal">/ $10k</span></p>
+                                </div>
+                                <div class="w-8 h-5 rounded bg-white/10 border border-white/10"></div>
+                            </div>
+                        </div>
+
+                        <p class="font-bold mb-6 text-xs uppercase tracking-widest text-gray-500">Activity</p>
+                        <div class="flex-1 space-y-6">
+                            <div class="flex justify-between items-center group cursor-pointer">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-11 h-11 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-[#5bc0be]/10 transition-colors">
+                                        <i data-lucide="coffee" class="w-5 h-5 text-gray-400 group-hover:text-[#5bc0be]"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold">Starbucks</p>
+                                        <p class="text-[10px] text-gray-600">Today, 08:42 AM</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm font-bold">-$4.50</p>
+                            </div>
+                            <div class="flex justify-between items-center group cursor-pointer">
+                                <div class="flex items-center gap-4">
+                                    <div class="w-11 h-11 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-[#5bc0be]/10 transition-colors">
+                                        <i data-lucide="shopping-bag" class="w-5 h-5 text-gray-400 group-hover:text-[#5bc0be]"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm font-semibold">Apple Store</p>
+                                        <p class="text-[10px] text-gray-600">Yesterday, 04:15 PM</p>
+                                    </div>
+                                </div>
+                                <p class="text-sm font-bold">-$999.00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="animate-on-scroll">
+                <h2 class="text-5xl md:text-6xl font-bold mb-8 tracking-tighter leading-[1.1]">The bank that <br/><span class="text-[#5bc0be]">lives in your pocket.</span></h2>
+                <p class="text-xl text-gray-400 mb-12 leading-relaxed">Download the Nexus app to instantly issue virtual cards, freeze physical cards, manage limits, and split bills with friends with a single tap.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button class="bg-white text-black px-8 py-4 rounded-2xl flex items-center gap-4 hover:bg-[#5bc0be] transition-all duration-300 group">
+                        <i data-lucide="apple" class="w-7 h-7 fill-current"></i>
+                        <div class="text-left leading-tight">
+                            <span class="text-[10px] block uppercase font-bold opacity-60">Download on the</span>
+                            <span class="font-bold text-xl tracking-tight">App Store</span>
+                        </div>
+                    </button>
+                    <button class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-all duration-300 group">
+                        <i data-lucide="play" class="w-7 h-7 fill-[#5bc0be] text-[#5bc0be]"></i>
+                        <div class="text-left leading-tight">
+                            <span class="text-[10px] block uppercase font-bold opacity-60">Get it on</span>
+                            <span class="font-bold text-xl tracking-tight">Google Play</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/5 bg-[#050810] pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
+            <div class="md:col-span-4">
+                <div class="flex items-center gap-2 mb-8">
+                    <div class="w-8 h-8 bg-[#5bc0be] rounded-lg flex items-center justify-center">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-[#050810]"></i>
+                    </div>
+                    <h1 class="text-xl font-bold tracking-tighter text-white">NEXUS<span class="text-[#5bc0be]">.</span></h1>
+                </div>
+                <p class="text-gray-500 text-sm leading-relaxed mb-8 max-w-xs">
+                    Reimagining the world's financial ecosystem. Nexus is a financial technology company, not a bank. Banking services provided by our partner banks.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-500 hover:text-[#5bc0be] hover:bg-white/10 transition-all"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-500 hover:text-[#5bc0be] hover:bg-white/10 transition-all"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-500 hover:text-[#5bc0be] hover:bg-white/10 transition-all"><i data-lucide="github" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+            
+            <div class="md:col-span-2">
+                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-8">Products</h4>
+                <ul class="space-y-4 text-sm text-gray-500 font-medium">
+                    <li><a href="#" class="hover:text-white transition-colors">Personal</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Business</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Invoicing</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Cards</a></li>
+                </ul>
+            </div>
+            
+            <div class="md:col-span-2">
+                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-8">Company</h4>
+                <ul class="space-y-4 text-sm text-gray-500 font-medium">
+                    <li><a href="#" class="hover:text-white transition-colors">About</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            
+            <div class="md:col-span-4">
+                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-8">Subscribe</h4>
+                <p class="text-sm text-gray-500 mb-6">Get the latest updates on new features and global expansions.</p>
+                <div class="flex gap-2">
+                    <input type="email" placeholder="Email address" class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors flex-1">
+                    <button class="bg-white text-[#050810] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#5bc0be] transition-all">Join</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-xs text-gray-600 font-medium">
+                &copy; 2026 Nexus Financial Technologies Inc.
+            </div>
+            <div class="flex gap-8 text-xs text-gray-600 font-medium">
+                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
+                <a href="#" class="hover:text-white transition-colors">Cookie Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>

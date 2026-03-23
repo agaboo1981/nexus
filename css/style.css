@@ -1,0 +1,132 @@
+/* --- Premium Fintech Visual System --- */
+:root {
+    --primary: #5bc0be;
+    --bg-dark: #050810;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body { 
+    background-color: var(--bg-dark);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- Secure Preloader --- */
+#preloader {
+    position: fixed; 
+    inset: 0;
+    background: var(--bg-dark); 
+    z-index: 10001; 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s ease;
+}
+
+.fade-out-loader { 
+    transform: translateY(-100%);
+    opacity: 0;
+}
+
+/* --- Sticky Glass Navbar --- */
+nav.scrolled {
+    background: rgba(5, 8, 16, 0.8) !important;
+    border-bottom: 1px solid var(--border-color);
+    padding-top: 1.25rem !important; 
+    padding-bottom: 1.25rem !important;
+    backdrop-filter: blur(20px);
+}
+
+/* --- Enhanced Glassmorphism --- */
+.backdrop-blur-3xl {
+    backdrop-filter: blur(60px);
+    -webkit-backdrop-filter: blur(60px);
+}
+
+/* --- Animations --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.22, 1, 0.36, 1), 
+                transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.animate-on-scroll.fade-in {
+    opacity: 1; 
+    transform: translateY(0);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+@keyframes float-slow {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(-1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+}
+
+.floating-card {
+    animation: float 8s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+    animation: bounce 4s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(-5%); animation-timing-function: cubic-bezier(0.8, 0, 1, 1); }
+    50% { transform: translateY(0); animation-timing-function: cubic-bezier(0, 0, 0.2, 1); }
+}
+
+/* --- Selection --- */
+::selection {
+    background: var(--primary);
+    color: var(--bg-dark);
+}
+
+/* --- Scrollbar --- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+}
+
+/* --- Button Polish --- */
+button {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:active {
+    transform: scale(0.96);
+}
