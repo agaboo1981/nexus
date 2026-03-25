@@ -410,7 +410,20 @@
     <script src="js/script.js"></script>
     <script>
         // Initialize Lucide Icons
-        lucide.createIcons();
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Fallback: Ensure preloader is removed even if script.js fails
+        setTimeout(() => {
+            const preloader = document.getElementById('preloader');
+            if (preloader && !preloader.classList.contains('fade-out-loader')) {
+                preloader.classList.add('fade-out-loader');
+                setTimeout(() => {
+                    if (preloader.parentNode) preloader.remove();
+                }, 800);
+            }
+        }, 1500);
     </script>
 </body>
 </html>

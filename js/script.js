@@ -1,23 +1,34 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Function to handle the preloader removal
+const removePreloader = () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('fade-out-loader');
+        // Remove from DOM after transition
+        setTimeout(() => {
+            if (preloader.parentNode) {
+                preloader.remove();
+            }
+        }, 800);
+    }
+};
+
+// Main initialization function
+const init = () => {
     // 1. Secure Preloader - Faster & More Professional
-    setTimeout(() => {
-        const preloader = document.getElementById('preloader');
-        if (preloader) {
-            preloader.classList.add('fade-out-loader');
-            // Remove from DOM after transition
-            setTimeout(() => preloader.remove(), 800);
-        }
-    }, 800);
+    // We run this after a short delay to ensure it's visible for a bit
+    setTimeout(removePreloader, 800);
 
     // 2. Dynamic Navbar
     const header = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 20) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
 
     // 3. Advanced Scroll Animations
     const observerOptions = {
@@ -70,11 +81,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 const target = entry.target;
                 const text = target.innerText;
                 const finalValue = parseFloat(text.replace(/[^0-9.]/g, ''));
-                animateValue(target, 0, finalValue, 2000);
+                if (!isNaN(finalValue)) {
+                    animateValue(target, 0, finalValue, 2000);
+                }
                 statsObserver.unobserve(target);
             }
         });
     });
 
     stats.forEach(stat => statsObserver.observe(stat));
-});
+};
+
+// Execute initialization
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+} else {
+    init();
+}
