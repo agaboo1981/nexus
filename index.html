@@ -14,6 +14,17 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
     </style>
+    <noscript>
+        <style>
+            .animate-on-scroll {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            #preloader {
+                display: none !important;
+            }
+        </style>
+    </noscript>
 </head>
 <body class="bg-[#050810] text-white font-sans overflow-x-hidden selection:bg-[#5bc0be]/30 selection:text-[#5bc0be]">
     <!-- Preloader -->
@@ -410,12 +421,15 @@
     <script src="js/script.js"></script>
     <script>
         // Initialize Lucide Icons
-        if (typeof lucide !== 'undefined') {
-            lucide.createIcons();
-        }
+        const initLucide = () => {
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        };
 
-        // Fallback: Ensure preloader is removed even if script.js fails
+        // Fallback: Ensure everything is visible even if script.js fails
         setTimeout(() => {
+            // 1. Remove Preloader
             const preloader = document.getElementById('preloader');
             if (preloader && !preloader.classList.contains('fade-out-loader')) {
                 preloader.classList.add('fade-out-loader');
@@ -423,7 +437,20 @@
                     if (preloader.parentNode) preloader.remove();
                 }, 800);
             }
+
+            // 2. Trigger Animations
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                if (!el.classList.contains('fade-in')) {
+                    el.classList.add('fade-in');
+                }
+            });
+
+            // 3. Ensure Icons
+            initLucide();
         }, 1500);
+
+        // Immediate Lucide init
+        initLucide();
     </script>
 </body>
 </html>
