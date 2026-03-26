@@ -14,6 +14,7 @@
         body { font-family: 'Inter', sans-serif; }
         .auth-card {
             background: rgba(255, 255, 255, 0.03);
+            -webkit-backdrop-filter: blur(40px);
             backdrop-filter: blur(40px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
@@ -48,28 +49,28 @@
             <form action="#" class="space-y-5">
                 <div class="grid grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 ml-1">First Name</label>
-                        <input type="text" placeholder="John" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
+                        <label for="firstName" class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 ml-1">First Name</label>
+                        <input id="firstName" type="text" placeholder="John" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
                     </div>
                     <div>
-                        <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 ml-1">Last Name</label>
-                        <input type="text" placeholder="Doe" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
+                        <label for="lastName" class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 ml-1">Last Name</label>
+                        <input id="lastName" type="text" placeholder="Doe" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 px-5 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 ml-1">Email Address</label>
+                    <label for="email" class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 ml-1">Email Address</label>
                     <div class="relative">
                         <i data-lucide="mail" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600"></i>
-                        <input type="email" placeholder="john@company.com" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
+                        <input id="email" type="email" placeholder="john@company.com" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 ml-1">Create Password</label>
+                    <label for="password" class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 ml-1">Create Password</label>
                     <div class="relative">
                         <i data-lucide="lock" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600"></i>
-                        <input type="password" placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
+                        <input id="password" type="password" placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
                     </div>
                     <div class="mt-2 flex gap-1 px-1">
                         <div class="h-1 flex-1 bg-[#5bc0be]/20 rounded-full"></div>
@@ -79,8 +80,8 @@
                 </div>
 
                 <div class="flex items-start gap-3 px-1 py-2">
-                    <input type="checkbox" class="mt-1 accent-[#5bc0be]">
-                    <p class="text-[10px] text-gray-500 leading-normal">I agree to the <a href="#" class="text-white font-bold hover:text-[#5bc0be]">Terms of Service</a> and <a href="#" class="text-white font-bold hover:text-[#5bc0be]">Privacy Policy</a>.</p>
+                    <input id="terms" type="checkbox" class="mt-1 accent-[#5bc0be]">
+                    <label for="terms" class="text-[10px] text-gray-500 leading-normal">I agree to the <a href="#" class="text-white font-bold hover:text-[#5bc0be]">Terms of Service</a> and <a href="#" class="text-white font-bold hover:text-[#5bc0be]">Privacy Policy</a>.</label>
                 </div>
 
                 <button type="submit" class="w-full bg-white text-[#050810] py-4 rounded-2xl font-bold text-sm hover:bg-[#5bc0be] transition-all duration-300 active:scale-[0.98]">
