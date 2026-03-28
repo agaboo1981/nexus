@@ -123,10 +123,67 @@ nav.scrolled {
 }
 
 /* --- Button Polish --- */
-button {
+button, .btn-premium {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-button:active {
+button:active, .btn-premium:active {
     transform: scale(0.96);
+}
+
+/* --- Premium Shimmer Effect --- */
+.shimmer {
+    position: relative;
+}
+
+.shimmer::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+}
+
+/* --- Text Glow --- */
+.text-glow {
+    text-shadow: 0 0 20px rgba(91, 192, 190, 0.4);
+}
+
+/* --- Refractive Card --- */
+.card-refraction {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-refraction::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(125deg, rgba(255,255,255,0.2) 0%, transparent 40%, rgba(255,255,255,0.1) 100%);
+    z-index: 1;
+}
+
+/* --- Hero Glows --- */
+.hero-glow-1 {
+    background: radial-gradient(circle at center, rgba(91, 192, 190, 0.15), transparent 70%);
+}
+
+.hero-glow-2 {
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), transparent 70%);
 }
