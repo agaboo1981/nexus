@@ -36,29 +36,31 @@ const init = () => {
     const mobileMenu = document.getElementById('mobile-menu');
     const mobileLinks = document.querySelectorAll('.mobile-link');
 
-    const toggleMenu = (open) => {
-        if (open) {
-            mobileMenu.classList.add('opacity-100');
-            mobileMenu.classList.remove('pointer-events-none');
-            document.body.style.overflow = 'hidden';
-            mobileMenuClose.focus();
-        } else {
-            mobileMenu.classList.remove('opacity-100');
-            mobileMenu.classList.add('pointer-events-none');
-            document.body.style.overflow = '';
-            mobileMenuToggle.focus();
-        }
-    };
+    if (mobileMenu && mobileMenuToggle && mobileMenuClose) {
+        const toggleMenu = (open) => {
+            if (open) {
+                mobileMenu.classList.add('opacity-100');
+                mobileMenu.classList.remove('pointer-events-none');
+                document.body.style.overflow = 'hidden';
+                mobileMenuClose.focus();
+            } else {
+                mobileMenu.classList.remove('opacity-100');
+                mobileMenu.classList.add('pointer-events-none');
+                document.body.style.overflow = '';
+                mobileMenuToggle.focus();
+            }
+        };
 
-    window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !mobileMenu.classList.contains('pointer-events-none')) {
-            toggleMenu(false);
-        }
-    });
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !mobileMenu.classList.contains('pointer-events-none')) {
+                toggleMenu(false);
+            }
+        });
 
-    if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', () => toggleMenu(true));
-    if (mobileMenuClose) mobileMenuClose.addEventListener('click', () => toggleMenu(false));
-    mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+        mobileMenuToggle.addEventListener('click', () => toggleMenu(true));
+        mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+        mobileLinks.forEach((link) => link.addEventListener('click', () => toggleMenu(false)));
+    }
 
     // 3. Advanced Scroll Animations
     const observerOptions = {

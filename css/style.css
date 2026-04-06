@@ -6,6 +6,11 @@
     --border-color: rgba(255, 255, 255, 0.08);
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -238,5 +243,29 @@ button:active, .btn-premium:active {
 @media (max-width: 640px) {
     .perspective-1000 {
         perspective: none !important;
+    }
+
+    #mobile-menu .mobile-link {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+
+    #mobile-menu .flex.flex-col.gap-4.w-full.px-12.mt-4 {
+        padding-left: 1.25rem !important;
+        padding-right: 1.25rem !important;
+    }
+
+    .auth-card {
+        padding: 1.5rem !important;
+        border-radius: 1.75rem !important;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
     }
 }
