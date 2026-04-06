@@ -6,11 +6,6 @@
     --border-color: rgba(255, 255, 255, 0.08);
 }
 
-html {
-    -webkit-text-size-adjust: 100%;
-    text-size-adjust: 100%;
-}
-
 * {
     margin: 0;
     padding: 0;
