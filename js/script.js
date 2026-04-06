@@ -12,8 +12,43 @@ const removePreloader = () => {
     }
 };
 
+const bindZoomGuards = () => {
+    let lastTouchEnd = 0;
+
+    // iOS Safari pinch gesture events
+    ['gesturestart', 'gesturechange', 'gestureend'].forEach((eventName) => {
+        document.addEventListener(eventName, (event) => {
+            event.preventDefault();
+        }, { passive: false });
+    });
+
+    // Block pinch zoom and accidental double-tap zoom.
+    document.addEventListener('touchmove', (event) => {
+        if (event.touches.length > 1) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+
+    document.addEventListener('touchend', (event) => {
+        const now = Date.now();
+        if (now - lastTouchEnd <= 280) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, { passive: false });
+
+    // Prevent browser zoom shortcuts like Ctrl/Cmd + wheel.
+    document.addEventListener('wheel', (event) => {
+        if (event.ctrlKey || event.metaKey) {
+            event.preventDefault();
+        }
+    }, { passive: false });
+};
+
 // Main initialization function
 const init = () => {
+    bindZoomGuards();
+
     // 1. Secure Preloader - Faster & More Professional
     // We run this after a short delay to ensure it's visible for a bit
     setTimeout(removePreloader, 800);
