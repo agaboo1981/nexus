@@ -30,6 +30,36 @@ const init = () => {
         });
     }
 
+    // --- Mobile Menu Toggle ---
+    const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+    const mobileMenuClose = document.getElementById('mobile-menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = document.querySelectorAll('.mobile-link');
+
+    const toggleMenu = (open) => {
+        if (open) {
+            mobileMenu.classList.add('opacity-100');
+            mobileMenu.classList.remove('pointer-events-none');
+            document.body.style.overflow = 'hidden';
+            mobileMenuClose.focus();
+        } else {
+            mobileMenu.classList.remove('opacity-100');
+            mobileMenu.classList.add('pointer-events-none');
+            document.body.style.overflow = '';
+            mobileMenuToggle.focus();
+        }
+    };
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !mobileMenu.classList.contains('pointer-events-none')) {
+            toggleMenu(false);
+        }
+    });
+
+    if (mobileMenuToggle) mobileMenuToggle.addEventListener('click', () => toggleMenu(true));
+    if (mobileMenuClose) mobileMenuClose.addEventListener('click', () => toggleMenu(false));
+    mobileLinks.forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+
     // 3. Advanced Scroll Animations
     const observerOptions = {
         threshold: 0.15,
@@ -49,7 +79,36 @@ const init = () => {
         observer.observe(el);
     });
 
-    // 4. Native Stat Counter
+    // --- Subscription Form ---
+    const subscribeForm = document.getElementById('subscribe-form');
+    if (subscribeForm) {
+        subscribeForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const input = subscribeForm.querySelector('input');
+            const btn = subscribeForm.querySelector('button');
+            const originalBtnText = btn.textContent;
+
+            if (input && input.value) {
+                btn.disabled = true;
+                btn.textContent = 'Joining...';
+                
+                try {
+                    await subscribeNewsletter(input.value);
+                    input.value = '';
+                    btn.textContent = 'Success!';
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.textContent = originalBtnText;
+                    }, 3000);
+                } catch (error) {
+                    btn.disabled = false;
+                    btn.textContent = originalBtnText;
+                }
+            }
+        });
+    }
+
+    // Native Stat Counter
     const stats = document.querySelectorAll('.stat-number');
     const animateValue = (obj, start, end, duration) => {
         let startTimestamp = null;
