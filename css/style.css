@@ -6,6 +6,13 @@
     --border-color: rgba(255, 255, 255, 0.08);
 }
 
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 * {
     margin: 0;
     padding: 0;
