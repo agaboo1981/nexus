@@ -153,13 +153,17 @@ const moneyLedger = () => {
     desc.textContent = 'Daily USD balance. Editing the send amount shows the projected effect on your balance.';
     svg.append(title, desc);
 
-    // scales
+    // historical domain
     let vmin = series[0], vmax = series[0];
     series.forEach((v) => { if (v < vmin) vmin = v; if (v > vmax) vmax = v; });
     const span = Math.max(vmax - vmin, BASE * 0.004);
-    const y0 = vmin - span * 0.28, y1 = vmax + span * 0.32;
+    const head = span * 0.42;                       // gentle headroom, stable
+    const histLo = vmin - head, histHi = vmax + head;
     const x = (i) => padL + (i / (series.length - 1)) * pw;
-    const y = (v) => padT + (1 - (v - y0) / (y1 - y0)) * ph;
+
+    /* mutable scale — the domain extends down to keep the projection in view */
+    let lo = histLo, hi = histHi;
+    let Y = (v) => padT + (1 - (v - lo) / (hi - lo)) * ph;
 
     const monoTick = (v) => (v >= 1000 ? `$${(v / 1000).toFixed(1)}k` : `$${Math.round(v)}`);
     const niceTicks = (min, max, count) => {
@@ -172,61 +176,27 @@ const moneyLedger = () => {
     };
     const daysAgo = (i) => { const d = series.length - 1 - i; return d === 0 ? 'Today' : d === 1 ? 'Yesterday' : `${d} days ago`; };
 
-    // recessive hairline grid + mono ticks
     const grid = document.createElementNS(ns, 'g');
-    niceTicks(y0, y1, 4).forEach((tv) => {
-      const yy = y(tv);
-      const ln = document.createElementNS(ns, 'line');
-      ln.setAttribute('x1', padL); ln.setAttribute('x2', W - padR); ln.setAttribute('y1', yy); ln.setAttribute('y2', yy);
-      ln.setAttribute('stroke', 'var(--grid)'); ln.setAttribute('stroke-width', '1');
-      const t = document.createElementNS(ns, 'text');
-      t.setAttribute('x', padL - 8); t.setAttribute('y', yy + 3.5);
-      t.setAttribute('text-anchor', 'end'); t.setAttribute('font-family', 'var(--font-mono)');
-      t.setAttribute('font-size', '10'); t.setAttribute('fill', 'var(--muted)');
-      t.textContent = monoTick(tv);
-      grid.append(ln, t);
-    });
-    svg.appendChild(grid);
-
-    // area wash (accent @ low alpha) closed to the data baseline
-    const baseY = padT + ph;
-    let d = `M${x(0)},${y(series[0])}`;
-    for (let i = 1; i < series.length; i++) d += ` L${x(i)},${y(series[i])}`;
-    d += ` L${x(series.length - 1)},${baseY} L${x(0)},${baseY} Z`;
     const area = document.createElementNS(ns, 'path');
-    area.setAttribute('d', d); area.setAttribute('fill', 'var(--area)');
-    svg.appendChild(area);
-
-    // the line (2px, round)
+    area.setAttribute('fill', 'var(--area)');
     const line = document.createElementNS(ns, 'path');
     line.setAttribute('fill', 'none'); line.setAttribute('stroke', 'var(--accent)');
     line.setAttribute('stroke-width', '2'); line.setAttribute('stroke-linejoin', 'round'); line.setAttribute('stroke-linecap', 'round');
-    const ld = [`M${x(0)},${y(series[0])}`];
-    for (let i = 1; i < series.length; i++) ld.push(`L${x(i)},${y(series[i])}`);
-    line.setAttribute('d', ld.join(' '));
-    svg.appendChild(line);
-
-    // end dot (>=8px, surface ring)
     const dot = document.createElementNS(ns, 'circle');
-    dot.setAttribute('cx', x(series.length - 1)); dot.setAttribute('cy', y(finalHist));
     dot.setAttribute('r', 4.5); dot.setAttribute('fill', 'var(--accent)');
     dot.setAttribute('stroke', 'var(--surface)'); dot.setAttribute('stroke-width', '2.5');
-    svg.appendChild(dot);
 
     // projection group (shown when a send amount is entered)
     const proj = document.createElementNS(ns, 'g');
     proj.setAttribute('opacity', '0'); proj.style.transition = 'opacity .3s ease';
     const pLine = document.createElementNS(ns, 'line');
-    pLine.setAttribute('y1', y(finalHist)); pLine.setAttribute('y2', y(finalHist));
     pLine.setAttribute('stroke', 'var(--muted)'); pLine.setAttribute('stroke-width', '2'); pLine.setAttribute('stroke-linecap', 'round');
-    pLine.setAttribute('x1', x(series.length - 1)); pLine.setAttribute('x2', x(series.length - 1));
     const pDot = document.createElementNS(ns, 'circle');
     pDot.setAttribute('r', 4); pDot.setAttribute('fill', 'var(--muted)'); pDot.setAttribute('stroke', 'var(--surface)'); pDot.setAttribute('stroke-width', '2.5');
     const pLabel = document.createElementNS(ns, 'text');
     pLabel.setAttribute('text-anchor', 'end'); pLabel.setAttribute('font-family', 'var(--font-mono)'); pLabel.setAttribute('font-size', '10'); pLabel.setAttribute('fill', 'var(--muted)');
     const pRect = document.createElementNS(ns, 'rect'); pRect.setAttribute('fill', 'var(--surface)'); pRect.setAttribute('rx', '4');
     proj.append(pLine, pDot, pRect, pLabel);
-    svg.appendChild(proj);
 
     // hover crosshair + tooltip (enhances; the balance figure stays visible at all times)
     const hit = document.createElementNS(ns, 'rect');
@@ -240,15 +210,16 @@ const moneyLedger = () => {
     const tipBack = document.createElementNS(ns, 'rect');
     tipBack.setAttribute('fill', 'var(--surface)'); tipBack.setAttribute('rx', '4'); tipBack.setAttribute('stroke', 'var(--hairline)'); tipBack.setAttribute('pointer-events', 'none');
     tip.setAttribute('opacity', '0'); tipBack.setAttribute('opacity', '0');
-    svg.append(hit, cursor, tipBack, tip);
+    svg.append(grid, area, line, dot, proj, hit, cursor, tipBack, tip);
     chartEl.appendChild(svg);
 
     const measure = (t) => t.getBBox().width;
-    const setProj = (amountUSD) => {
-      if (!amountUSD) { proj.setAttribute('opacity', '0'); return; }
-      const pval = finalHist - amountUSD;
-      const px = x(series.length - 1), py = y(pval);
-      pLine.setAttribute('x2', px); pLine.setAttribute('y2', py);
+
+    /* position the projection with the current scale */
+    const drawProj = () => {
+      const px = x(series.length - 1), py = Y(projVal);
+      pLine.setAttribute('x1', px); pLine.setAttribute('x2', px);
+      pLine.setAttribute('y1', Y(finalHist)); pLine.setAttribute('y2', py);
       pDot.setAttribute('cx', px); pDot.setAttribute('cy', py);
       pLabel.setAttribute('x', px - 2); pLabel.setAttribute('y', py - 9);
       pLabel.textContent = 'after this send';
@@ -256,8 +227,46 @@ const moneyLedger = () => {
       pRect.setAttribute('y', py - 20);
       pRect.setAttribute('width', measure(pLabel) + 12);
       pRect.setAttribute('height', 15);
-      proj.setAttribute('opacity', '1');
     };
+
+    /* draw every y-dependent mark against the current [lo, hi] */
+    const render = () => {
+      grid.replaceChildren();
+      niceTicks(lo, hi, 4).forEach((tv) => {
+        const yy = Y(tv);
+        const ln = document.createElementNS(ns, 'line');
+        ln.setAttribute('x1', padL); ln.setAttribute('x2', W - padR); ln.setAttribute('y1', yy); ln.setAttribute('y2', yy);
+        ln.setAttribute('stroke', 'var(--grid)'); ln.setAttribute('stroke-width', '1');
+        const t = document.createElementNS(ns, 'text');
+        t.setAttribute('x', padL - 8); t.setAttribute('y', yy + 3.5);
+        t.setAttribute('text-anchor', 'end'); t.setAttribute('font-family', 'var(--font-mono)');
+        t.setAttribute('font-size', '10'); t.setAttribute('fill', 'var(--muted)');
+        t.textContent = monoTick(tv);
+        grid.append(ln, t);
+      });
+      const baseY = padT + ph;
+      let d = `M${x(0)},${Y(series[0])}`;
+      for (let i = 1; i < series.length; i++) d += ` L${x(i)},${Y(series[i])}`;
+      d += ` L${x(series.length - 1)},${baseY} L${x(0)},${baseY} Z`;
+      area.setAttribute('d', d);
+      const ld = [`M${x(0)},${Y(series[0])}`];
+      for (let i = 1; i < series.length; i++) ld.push(`L${x(i)},${Y(series[i])}`);
+      line.setAttribute('d', ld.join(' '));
+      dot.setAttribute('cx', x(series.length - 1)); dot.setAttribute('cy', Y(finalHist));
+      drawProj();
+    };
+
+    /* the impact projection — extends the lower domain so the drop stays visible */
+    let projActive = false, projVal = 0;
+    const setProj = (amountUSD) => {
+      projActive = !!amountUSD;
+      projVal = projActive ? Math.max(0, finalHist - amountUSD) : 0;
+      proj.setAttribute('opacity', projActive ? '1' : '0');
+      const wantLo = projActive ? Math.min(vmin, projVal) - head : histLo;
+      if (Math.abs(wantLo - lo) > 0.5) { lo = wantLo; Y = (v) => padT + (1 - (v - lo) / (hi - lo)) * ph; render(); }
+      else drawProj();
+    };
+
     const showTip = (i) => {
       const cx = x(i), cv = series[i];
       tip.textContent = `${daysAgo(i)}    ${monoTick(cv)}`;
@@ -279,6 +288,7 @@ const moneyLedger = () => {
     });
     hit.addEventListener('mouseleave', hideTip);
 
+    render();
     return { setProj };
   };
 
