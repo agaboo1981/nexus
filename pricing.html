@@ -3,108 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus | Pricing</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Nexus pricing — transparent plans with no hidden fees. Free, Premium, and Black. Cancel any time.">
+    <title>Pricing — Nexus</title>
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-[#050810] text-white">
-    <nav class="fixed top-0 w-full z-50 transition-all duration-500 py-6">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-2 group cursor-pointer">
-                <a href="index.html" class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-[#5bc0be] rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-[#050810]"></i>
-                    </div>
-                    <h1 class="text-xl font-bold tracking-tighter text-white">NEXUS<span class="text-[#5bc0be]">.</span></h1>
-                </a>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-10 text-[13px] font-medium text-gray-400">
-                <a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a>
-                <a href="pricing.html" class="text-white transition-colors duration-300">Pricing</a>
-                <a href="index.html#features" class="hover:text-white transition-colors duration-300">Features</a>
-            </div>
-
-            <div class="flex items-center space-x-3 md:space-x-6">
-                <a href="login.html" class="hidden sm:inline-block text-[13px] font-semibold text-gray-300 hover:text-white transition cursor-pointer">Log in</a>
-                <a href="signup.html" class="hidden sm:block bg-white text-[#050810] px-6 py-2.5 rounded-full text-[13px] font-bold hover:bg-[#5bc0be] transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer">Open Account</a>
-                <button id="mobile-menu-toggle" class="md:hidden text-white p-2 focus:outline-none" aria-label="Open mobile menu" title="Open mobile menu">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="Nexus — home">
+                <span class="brand__mark">N</span>
+                <span class="brand__name">nexus<b>.</b></span>
+            </a>
+            <nav class="nav__links" aria-label="Primary">
+                <a class="nav__link" href="about.html">About</a>
+                <a class="nav__link" href="pricing.html" aria-current="true">Pricing</a>
+                <a class="nav__link" href="index.html#features">Features</a>
+            </nav>
+            <div class="nav__actions">
+                <a class="nav__login" href="login.html">Log in</a>
+                <a class="btn btn--dark btn--sm" href="signup.html">Open account</a>
+                <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#050810]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10 opacity-0 pointer-events-none transition-all duration-500 overflow-hidden">
-        <button id="mobile-menu-close" class="absolute top-8 right-8 text-gray-400 hover:text-white" aria-label="Close mobile menu" title="Close mobile menu">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        <div class="flex flex-col items-center gap-8 text-2xl font-bold tracking-tighter">
-            <a href="index.html" class="mobile-link text-white hover:text-[#5bc0be]">Home</a>
-            <a href="about.html" class="mobile-link text-white hover:text-[#5bc0be]">About Us</a>
-            <a href="pricing.html" class="mobile-link text-[#5bc0be]">Pricing</a>
-            <a href="index.html#features" class="mobile-link text-white hover:text-[#5bc0be]">Features</a>
-        </div>
-        <div class="flex flex-col gap-4 w-full px-6 sm:px-12 mt-4">
-            <a href="signup.html" class="w-full bg-white text-[#050810] py-5 rounded-2xl text-center font-black">Open Free Account</a>
-            <a href="login.html" class="w-full bg-white/5 border border-white/10 text-white py-5 rounded-2xl text-center font-black">Login</a>
+    <div class="mobile-nav" aria-hidden="true">
+        <button class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x"></i></button>
+        <nav class="mobile-nav__links" aria-label="Mobile">
+            <a class="mobile-nav__link" href="index.html">Home</a>
+            <a class="mobile-nav__link" href="about.html">About</a>
+            <a class="mobile-nav__link" href="pricing.html" aria-current="true">Pricing</a>
+            <a class="mobile-nav__link" href="index.html#features">Features</a>
+        </nav>
+        <div class="mobile-nav__actions">
+            <a class="btn btn--dark" href="signup.html">Open account</a>
+            <a class="btn btn--ghost" href="login.html">Log in</a>
         </div>
     </div>
 
-    <main class="pt-36 md:pt-48 pb-24 md:pb-32 max-w-7xl mx-auto px-6">
-        <div class="text-center mb-24">
-            <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-8">Transparent <span class="text-[#5bc0be]">Pricing.</span></h1>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Choose the plan that fits your lifestyle. No hidden fees, no surprises.</p>
-        </div>
+    <main>
+        <section class="section" style="padding-top:clamp(6rem,13vw,10rem)">
+            <div class="container">
+                <div class="sec-head reveal" style="margin-inline:auto;text-align:center;max-width:640px">
+                    <span class="eyebrow">Pricing</span>
+                    <h2 style="margin-inline:auto">Fair, from day one.</h2>
+                    <p style="margin-inline:auto">Every plan includes real-time FX, instant virtual cards, and transparent fees. Switch plans or cancel any time.</p>
 
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Free Plan -->
-            <div class="bg-white/5 border border-white/10 rounded-[2.5rem] p-10 hover:border-white/20 transition-all">
-                <h3 class="text-xl font-bold mb-2">Standard</h3>
-                <p class="text-gray-500 text-sm mb-8">Perfect for daily spending</p>
-                <div class="text-4xl font-black mb-8">$0<span class="text-lg text-gray-500 font-medium">/mo</span></div>
-                <ul class="space-y-4 mb-10 text-sm text-gray-400">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> Free virtual card</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> Standard rewards</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> Basic insights</li>
-                </ul>
-                <a href="download.html" class="block w-full text-center bg-white/5 border border-white/10 py-4 rounded-2xl font-bold text-sm hover:bg-white/10 transition-all">Get Started</a>
-            </div>
+                    <div class="toggle" role="group" aria-label="Billing period" style="margin-top:1.75rem">
+                        <button type="button" data-billing="monthly" class="is-active">Monthly</button>
+                        <button type="button" data-billing="yearly">Yearly · save 10%</button>
+                    </div>
+                </div>
 
-            <!-- Pro Plan -->
-            <div class="bg-[#5bc0be]/10 border border-[#5bc0be]/30 rounded-[2.5rem] p-10 relative overflow-hidden md:-translate-y-4 shadow-2xl">
-                <div class="absolute top-4 right-4 bg-[#5bc0be] text-[#050810] text-[10px] font-bold px-3 py-1 rounded-full uppercase">Most Popular</div>
-                <h3 class="text-xl font-bold mb-2">Premium</h3>
-                <p class="text-gray-500 text-sm mb-8">For global travelers</p>
-                <div class="text-4xl font-black mb-8">$9.99<span class="text-lg text-gray-500 font-medium">/mo</span></div>
-                <ul class="space-y-4 mb-10 text-sm text-gray-300">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> Personalized metal card</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> 2x reward points</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> Zero FX fees</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> Lounge access</li>
-                </ul>
-                <a href="download.html" class="block w-full text-center bg-white text-[#050810] py-4 rounded-2xl font-bold text-sm hover:bg-[#5bc0be] transition-all">Go Premium</a>
-            </div>
+                <div class="pricing">
+                    <!-- Standard -->
+                    <article class="price-card reveal">
+                        <span class="price-card__name">Standard</span>
+                        <span class="price-card__desc">Everything you need for daily money.</span>
+                        <div class="price-card__num"><span data-monthly="$0" data-yearly="$0">$0</span><small>/mo, forever</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i>Free virtual card</li>
+                            <li><i data-lucide="check"></i>Real-time exchange rates</li>
+                            <li><i data-lucide="check"></i>Automatic spending insights</li>
+                            <li><i data-lucide="check"></i>Instant bill splitting</li>
+                        </ul>
+                        <a class="btn btn--ghost" href="signup.html">Get started</a>
+                    </article>
 
-            <!-- Ultimate Plan -->
-            <div class="bg-white/5 border border-white/10 rounded-[2.5rem] p-10 hover:border-white/20 transition-all">
-                <h3 class="text-xl font-bold mb-2">Black</h3>
-                <p class="text-gray-500 text-sm mb-8">The ultimate vault</p>
-                <div class="text-4xl font-black mb-8">$29.99<span class="text-lg text-gray-500 font-medium">/mo</span></div>
-                <ul class="space-y-4 mb-10 text-sm text-gray-400">
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> Concierge service</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> Premium insurance</li>
-                    <li class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-[#5bc0be]"></i> Highest yield APY</li>
-                </ul>
-                <a href="download.html" class="block w-full text-center bg-white/5 border border-white/10 py-4 rounded-2xl font-bold text-sm hover:bg-white/10 transition-all">Join Waiting List</a>
+                    <!-- Premium -->
+                    <article class="price-card price-card--featured reveal">
+                        <span class="badge">Most popular</span>
+                        <span class="price-card__name">Premium</span>
+                        <span class="price-card__desc">For frequent travel and bigger balances.</span>
+                        <div class="price-card__num"><span data-monthly="$9.99" data-yearly="$8.99">$9.99</span><small data-monthly="/mo" data-yearly="/mo, billed yearly">/mo</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i>Personalised metal card</li>
+                            <li><i data-lucide="check"></i>2× reward points</li>
+                            <li><i data-lucide="check"></i>Zero foreign-exchange fees</li>
+                            <li><i data-lucide="check"></i>Airport lounge access</li>
+                        </ul>
+                        <a class="btn btn--primary" href="signup.html">Go Premium</a>
+                    </article>
+
+                    <!-- Black -->
+                    <article class="price-card reveal">
+                        <span class="price-card__name">Black</span>
+                        <span class="price-card__desc">The fullest experience, for the few.</span>
+                        <div class="price-card__num"><span data-monthly="$29.99" data-yearly="$24.99">$29.99</span><small data-monthly="/mo" data-yearly="/mo, billed yearly">/mo</small></div>
+                        <ul>
+                            <li><i data-lucide="check"></i>Priority concierge service</li>
+                            <li><i data-lucide="check"></i>Comprehensive travel insurance</li>
+                            <li><i data-lucide="check"></i>Top-tier savings yield</li>
+                            <li><i data-lucide="check"></i>Complimentary virtual assistant</li>
+                        </ul>
+                        <a class="btn btn--ghost" href="signup.html">Join waitlist</a>
+                    </article>
+                </div>
+
+                <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1rem 2.5rem;justify-content:center;margin-top:3rem">
+                    <span class="pill"><i data-lucide="shield-check"></i>No hidden fees</span>
+                    <span class="pill"><i data-lucide="calendar"></i>Cancel any time</span>
+                    <span class="pill"><i data-lucide="eye"></i>Fees shown upfront</span>
+                </div>
             </div>
-        </div>
+        </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a class="brand" href="index.html">
+                        <span class="brand__mark">N</span>
+                        <span class="brand__name">nexus<b>.</b></span>
+                    </a>
+                    <p>Nexus is a financial technology company, not a bank. Banking services are provided by our partner banks.</p>
+                </div>
+                <div class="footer__col">
+                    <h5>Products</h5>
+                    <ul>
+                        <li><a href="pricing.html">Cards</a></li>
+                        <li><a href="pricing.html">Savings</a></li>
+                        <li><a href="pricing.html">Transfers</a></li>
+                        <li><a href="download.html">Mobile app</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="index.html#features">Features</a></li>
+                        <li><a href="about.html">Careers</a></li>
+                        <li><a href="about.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">Contact</a></li>
+                        <li><a href="download.html">Download</a></li>
+                        <li><a href="login.html">Log in</a></li>
+                        <li><a href="signup.html">Open account</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h5>Stay in the loop</h5>
+                    <p style="color:var(--muted);font-size:.9rem">Occasional updates on features and global launches. No spam.</p>
+                    <form class="newsletter" novalidate>
+                        <input class="input" type="email" placeholder="you@example.com" aria-label="Email address" required>
+                        <button class="btn btn--primary btn--sm" type="submit">Join</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer__base">
+                <span>© 2026 Nexus Financial Technologies Inc.</span>
+                <div class="footer__legal">
+                    <a href="#">Privacy policy</a>
+                    <a href="#">Terms of service</a>
+                    <a href="#">Cookie settings</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="js/script.js"></script>
-    <script>lucide.createIcons();</script>
 </body>
 </html>

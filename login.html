@@ -3,135 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus | Secure Login</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <meta name="description" content="Log in to your Nexus account.">
+    <title>Log in — Nexus</title>
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .auth-card {
-            background: rgba(255, 255, 255, 0.03);
-            -webkit-backdrop-filter: blur(40px);
-            backdrop-filter: blur(40px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-    </style>
-    </head>
-    <body class="bg-[#050810] text-white flex items-start sm:items-center justify-center min-h-[100svh] p-4 sm:p-6 overflow-x-hidden overflow-y-auto">
-    <nav class="fixed top-0 w-full z-50 transition-all duration-500 py-6">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-2 group cursor-pointer">
-                <a href="index.html" class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-[#5bc0be] rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-[#050810]"></i>
-                    </div>
-                    <h1 class="text-xl font-bold tracking-tighter text-white">NEXUS<span class="text-[#5bc0be]">.</span></h1>
+</head>
+<body>
+    <div class="auth">
+        <div class="auth__panel">
+            <div class="auth__box">
+                <a class="brand" href="index.html" aria-label="Nexus — home" style="margin-bottom:3rem">
+                    <span class="brand__mark">N</span>
+                    <span class="brand__name">nexus<b>.</b></span>
                 </a>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-10 text-[13px] font-medium text-gray-400">
-                <a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a>
-                <a href="pricing.html" class="hover:text-white transition-colors duration-300">Pricing</a>
-                <a href="index.html#features" class="hover:text-white transition-colors duration-300">Features</a>
-            </div>
 
-            <div class="flex items-center space-x-3 md:space-x-6">
-                <a href="login.html" class="hidden sm:inline-block text-[13px] font-semibold text-white transition cursor-pointer">Log in</a>
-                <a href="signup.html" class="hidden sm:block bg-white text-[#050810] px-6 py-2.5 rounded-full text-[13px] font-bold hover:bg-[#5bc0be] transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer">Open Account</a>
-                <button id="mobile-menu-toggle" class="md:hidden text-white p-2 focus:outline-none" aria-label="Open mobile menu" title="Open mobile menu">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
+                <div class="auth__form reveal">
+                    <h2>Welcome back</h2>
+                    <p>Log in to keep managing your money.</p>
 
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#050810]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10 opacity-0 pointer-events-none transition-all duration-500 overflow-hidden">
-        <button id="mobile-menu-close" class="absolute top-8 right-8 text-gray-400 hover:text-white" aria-label="Close mobile menu" title="Close mobile menu">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        <div class="flex flex-col items-center gap-8 text-2xl font-bold tracking-tighter">
-            <a href="index.html" class="mobile-link text-white hover:text-[#5bc0be]">Home</a>
-            <a href="about.html" class="mobile-link text-white hover:text-[#5bc0be]">About Us</a>
-            <a href="pricing.html" class="mobile-link text-white hover:text-[#5bc0be]">Pricing</a>
-            <a href="index.html#features" class="mobile-link text-white hover:text-[#5bc0be]">Features</a>
-        </div>
-        <div class="flex flex-col gap-4 w-full px-6 sm:px-12 mt-4">
-            <a href="signup.html" class="w-full bg-white text-[#050810] py-5 rounded-2xl text-center font-black">Open Free Account</a>
-            <a href="login.html" class="w-full bg-white/5 border border-white/10 text-white py-5 rounded-2xl text-center font-black">Login</a>
-        </div>
-    </div>
+                    <form novalidate>
+                        <label class="field">Email address
+                            <input class="input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                        </label>
+                        <label class="field">
+                            <span style="display:flex;justify-content:space-between">Password <a href="#" class="link" style="font-weight:500;font-size:.8rem">Forgot?</a></span>
+                            <input class="input" type="password" name="password" placeholder="••••••••" autocomplete="current-password" required>
+                        </label>
+                        <button class="btn btn--primary btn--lg" type="submit" style="width:100%">Log in</button>
+                    </form>
 
-    <div class="absolute inset-0 z-0 opacity-20 overflow-hidden pointer-events-none">        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#5bc0be]/10 rounded-full blur-[120px]"></div>
-        <svg class="h-full w-full stroke-white/5" fill="none">
-            <defs>
-                <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
-                    <path d="M0 60V.5H60" />
-                </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#grid)" />
-        </svg>
-    </div>
-
-    <div class="relative z-10 w-full max-w-md animate-on-scroll fade-in mt-24 sm:mt-28 mb-6">
-        <div class="text-center mb-10">
-            <a href="index.html" class="inline-flex items-center gap-2 group mb-8">
-                <div class="w-10 h-10 bg-[#5bc0be] rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                    <i data-lucide="shield-check" class="w-6 h-6 text-[#050810]"></i>
+                    <div class="auth__footer">
+                        New to Nexus? <a href="signup.html" class="link">Create an account</a>
+                    </div>
                 </div>
-                <h1 class="text-2xl font-bold tracking-tighter text-white">NEXUS<span class="text-[#5bc0be]">.</span></h1>
+            </div>
+        </div>
+
+        <aside class="auth__aside">
+            <a class="brand" href="index.html" aria-label="Nexus — home">
+                <span class="brand__mark" style="background:#fff;color:var(--ink)">N</span>
+                <span class="brand__name" style="color:#fff">nexus<b>.</b></span>
             </a>
-            <h2 class="text-3xl font-bold tracking-tight">Welcome back</h2>
-            <p class="text-gray-500 mt-2">Enter your credentials to access your vault.</p>
-        </div>
-
-        <div class="auth-card p-10 rounded-[2.5rem] shadow-2xl">
-            <form action="#" class="space-y-6">
-                <div>
-                    <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500 mb-2 ml-1">Email Address</label>
-                    <div class="relative">
-                        <i data-lucide="mail" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600"></i>
-                        <input type="email" placeholder="name@company.com" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
-                    </div>
+            <div class="reveal">
+                <span class="eyebrow">Your money, guarded</span>
+                <h2 class="display">One account. Everywhere.</h2>
+                <p class="lede">Move, spend, and save with the confidence that everything is protected by bank-grade encryption and real-time fraud monitoring.</p>
+                <div class="auth__badges">
+                    <span><i data-lucide="lock"></i>AES-256 encryption</span>
+                    <span><i data-lucide="fingerprint"></i>Biometric unlock</span>
                 </div>
-
-                <div>
-                    <div class="flex justify-between items-center mb-2 ml-1">
-                        <label class="block text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">Password</label>
-                        <a href="#" class="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5bc0be] hover:text-white transition-colors">Forgot?</a>
-                    </div>
-                    <div class="relative">
-                        <i data-lucide="lock" class="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-600"></i>
-                        <input type="password" placeholder="••••••••" class="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors">
-                    </div>
-                </div>
-
-                <button type="submit" class="w-full bg-white text-[#050810] py-4 rounded-2xl font-bold text-sm hover:bg-[#5bc0be] transition-all duration-300 active:scale-[0.98] mt-4">
-                    Authorize Access
-                </button>
-            </form>
-
-            <div class="mt-8 pt-8 border-t border-white/5 text-center">
-                <p class="text-sm text-gray-500">Don't have an account? <a href="signup.html" class="text-white font-bold hover:text-[#5bc0be] transition-colors">Create one</a></p>
             </div>
-        </div>
-        
-        <div class="mt-10 flex items-center justify-center gap-6 opacity-30">
-            <div class="flex items-center gap-2">
-                <i data-lucide="shield" class="w-3 h-3"></i>
-                <span class="text-[8px] font-bold uppercase tracking-widest">AES-256 Encrypted</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <i data-lucide="fingerprint" class="w-3 h-3"></i>
-                <span class="text-[8px] font-bold uppercase tracking-widest">Biometric Ready</span>
-            </div>
-        </div>
+            <span class="lede" style="font-size:.85rem;opacity:.65;font-family:var(--font-mono)">© 2026 Nexus Financial Technologies Inc.</span>
+        </aside>
     </div>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="js/script.js"></script>
-    <script>lucide.createIcons();</script>
 </body>
 </html>

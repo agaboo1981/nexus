@@ -3,63 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus | Download the App</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="description" content="Download the Nexus app for iOS and Android. Banking, cards, and transfers on the go.">
+    <title>Download — Nexus</title>
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="bg-[#050810] text-white flex items-center justify-center min-h-screen p-6">
-    <div class="absolute inset-0 z-0 opacity-20 overflow-hidden pointer-events-none">
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#5bc0be]/10 rounded-full blur-[120px]"></div>
-    </div>
-
-    <div class="relative z-10 w-full max-w-2xl text-center">
-        <a href="index.html" class="inline-flex items-center gap-2 group mb-12">
-            <div class="w-10 h-10 bg-[#5bc0be] rounded-xl flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                <i data-lucide="shield-check" class="w-6 h-6 text-[#050810]"></i>
-            </div>
-            <h1 class="text-2xl font-bold tracking-tighter text-white">NEXUS<span class="text-[#5bc0be]">.</span></h1>
-        </a>
-
-        <div class="bg-white/5 backdrop-blur-3xl border border-white/10 rounded-[3rem] p-12 md:p-16 shadow-2xl">
-            <div class="w-20 h-20 bg-[#5bc0be]/10 rounded-3xl flex items-center justify-center text-[#5bc0be] mx-auto mb-8">
-                <i data-lucide="smartphone" class="w-10 h-10"></i>
-            </div>
-            <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight">Banking is better <br/><span class="text-[#5bc0be]">on mobile.</span></h2>
-            <p class="text-gray-400 text-lg mb-12 max-w-md mx-auto leading-relaxed">
-                For security and the best experience, all banking actions happen within the Nexus mobile app.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#" class="bg-white text-black px-8 py-4 rounded-2xl flex items-center gap-4 hover:bg-[#5bc0be] transition-all group">
-                    <i class="fa-brands fa-apple text-[1.5rem] leading-none"></i>
-                    <div class="text-left leading-tight">
-                        <span class="text-[10px] block uppercase font-bold opacity-60">Download on</span>
-                        <span class="font-bold text-lg">App Store</span>
-                    </div>
-                </a>
-                <a href="#" class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-all group">
-                    <i class="fa-brands fa-google-play text-[1.35rem] leading-none text-[#5bc0be]"></i>
-                    <div class="text-left leading-tight">
-                        <span class="text-[10px] block uppercase font-bold opacity-60">Get it on</span>
-                        <span class="font-bold text-lg">Google Play</span>
-                    </div>
-                </a>
-            </div>
-
-            <div class="mt-12 flex items-center justify-center gap-2 text-gray-500 text-sm">
-                <i data-lucide="qr-code" class="w-4 h-4"></i>
-                <span>Or scan the QR code on your desktop</span>
+<body>
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="Nexus — home">
+                <span class="brand__mark">N</span>
+                <span class="brand__name">nexus<b>.</b></span>
+            </a>
+            <div class="nav__actions">
+                <a class="btn btn--dark btn--sm" href="signup.html">Open account</a>
+                <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
             </div>
         </div>
-        
-        <a href="index.html" class="inline-block mt-12 text-gray-500 hover:text-white transition-colors text-sm font-medium">
-            <i data-lucide="arrow-left" class="w-4 h-4 inline mr-2"></i> Back to Homepage
-        </a>
+    </header>
+
+    <div class="mobile-nav" aria-hidden="true">
+        <button class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x"></i></button>
+        <nav class="mobile-nav__links" aria-label="Mobile">
+            <a class="mobile-nav__link" href="index.html">Home</a>
+            <a class="mobile-nav__link" href="about.html">About</a>
+            <a class="mobile-nav__link" href="pricing.html">Pricing</a>
+            <a class="mobile-nav__link" href="index.html#features">Features</a>
+        </nav>
+        <div class="mobile-nav__actions">
+            <a class="btn btn--dark" href="signup.html">Open account</a>
+            <a class="btn btn--ghost" href="login.html">Log in</a>
+        </div>
     </div>
+
+    <main class="section" style="padding-top:calc(72px + clamp(3rem,8vw,6rem))">
+        <div class="container">
+            <div class="dl-card reveal" style="max-width:720px;margin-inline:auto">
+                <span class="card__icon" style="margin-inline:auto;width:56px;height:56px"><i data-lucide="smartphone" style="width:24px;height:24px"></i></span>
+                <h2 class="display" style="margin:.25rem auto 1rem">Banking is better on your phone.</h2>
+                <p class="lede" style="max-width:46ch;margin-inline:auto">
+                    For the best experience and security, your cards, transfers, and spending controls live in the Nexus mobile app.
+                </p>
+                <div class="store-row" style="justify-content:center;margin-top:2.25rem">
+                    <a href="#" class="store-btn"><i data-lucide="apple"></i><span><span class="lbl">Download on the</span><span class="sub">App Store</span></span></a>
+                    <a href="#" class="store-btn" style="background:#fff;color:var(--ink);border:1px solid var(--hairline)"><i data-lucide="play" style="color:var(--accent)"></i><span><span class="lbl">Get it on</span><span class="sub">Google Play</span></span></a>
+                </div>
+                <div class="auth__badges" style="justify-content:center;margin-top:2rem">
+                    <span><i data-lucide="qr-code"></i>Or scan the QR code on desktop</span>
+                </div>
+            </div>
+            <div style="text-align:center;margin-top:2.5rem">
+                <a class="link" href="index.html"><i data-lucide="arrow-left" style="width:1rem;height:1rem"></i>Back to homepage</a>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="js/script.js"></script>
-    <script>lucide.createIcons();</script>
 </body>
 </html>

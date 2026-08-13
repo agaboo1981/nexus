@@ -3,477 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexus | Finance for the Future</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <meta name="description" content="Nexus is a modern account for spending, saving, and sending money across 150+ countries — with transparent fees and no surprises.">
+    <title>Nexus — Banking that just works, everywhere</title>
+    <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-    </style>
-    <noscript>
-        <style>
-            .animate-on-scroll {
-                opacity: 1 !important;
-                transform: none !important;
-            }
-            #preloader {
-                display: none !important;
-            }
-        </style>
-    </noscript>
 </head>
-<body class="bg-[#050810] text-white font-sans overflow-x-hidden selection:bg-[#5bc0be]/30 selection:text-[#5bc0be]">
-    <!-- Preloader -->
-    <div id="preloader" class="flex flex-col items-center justify-center">
-        <div class="relative w-16 h-16">
-            <div class="absolute inset-0 border-2 border-[#5bc0be]/20 rounded-full"></div>
-            <div class="absolute inset-0 border-t-2 border-[#5bc0be] rounded-full animate-spin"></div>
-        </div>
-        <div class="mt-6 font-mono text-[10px] tracking-[0.3em] text-[#5bc0be] uppercase animate-pulse">Initializing Secure Layer</div>
-    </div>
-
-    <!-- Custom Cursor Removal -->
-    
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-50 transition-all duration-500 py-6">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center gap-2 group cursor-pointer">
-                <a href="index.html" class="flex items-center gap-2">
-                    <div class="w-8 h-8 bg-[#5bc0be] rounded-lg flex items-center justify-center transform group-hover:rotate-12 transition-transform duration-300">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-[#050810]"></i>
-                    </div>
-                    <h1 class="text-xl font-bold tracking-tighter text-white">NEXUS<span class="text-[#5bc0be]">.</span></h1>
-                </a>
-            </div>
-            
-            <div class="hidden md:flex items-center space-x-10 text-[13px] font-medium text-gray-400">
-                <a href="about.html" class="hover:text-white transition-colors duration-300">About Us</a>
-                <a href="pricing.html" class="hover:text-white transition-colors duration-300">Pricing</a>
-                <a href="#features" class="hover:text-white transition-colors duration-300">Features</a>
-            </div>
-
-            <div class="flex items-center space-x-3 md:space-x-6">
-                <a href="login.html" class="hidden sm:inline-block text-[13px] font-semibold text-gray-300 hover:text-white transition cursor-pointer">Log in</a>
-                <a href="signup.html" class="hidden sm:block bg-white text-[#050810] px-6 py-2.5 rounded-full text-[13px] font-bold hover:bg-[#5bc0be] transition-all duration-300 shadow-lg shadow-white/5 cursor-pointer">Open Account</a>
-                <button id="mobile-menu-toggle" class="md:hidden text-white p-2 focus:outline-none" aria-label="Open mobile menu" title="Open mobile menu">
-                    <i data-lucide="menu" class="w-6 h-6"></i>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-[100] bg-[#050810]/95 backdrop-blur-2xl flex flex-col items-center justify-center gap-10 opacity-0 pointer-events-none transition-all duration-500 overflow-hidden">
-        <button id="mobile-menu-close" class="absolute top-8 right-8 text-gray-400 hover:text-white" aria-label="Close mobile menu" title="Close mobile menu">
-            <i data-lucide="x" class="w-8 h-8"></i>
-        </button>
-        <div class="flex flex-col items-center gap-8 text-2xl font-bold tracking-tighter">
-            <a href="index.html" class="mobile-link text-[#5bc0be]">Home</a>
-            <a href="about.html" class="mobile-link text-white hover:text-[#5bc0be]">About Us</a>
-            <a href="pricing.html" class="mobile-link text-white hover:text-[#5bc0be]">Pricing</a>
-            <a href="#features" class="mobile-link text-white hover:text-[#5bc0be]">Features</a>
-        </div>
-        <div class="flex flex-col gap-4 w-full px-6 sm:px-12 mt-4">
-            <a href="signup.html" class="w-full bg-white text-[#050810] py-5 rounded-2xl text-center font-black">Open Free Account</a>
-            <a href="login.html" class="w-full bg-white/5 border border-white/10 text-white py-5 rounded-2xl text-center font-black">Login</a>
-        </div>
-    </div>
-    
-    <!-- Hero Section -->
-    <main class="max-w-7xl mx-auto px-6 pt-28 pb-16 sm:pt-32 sm:pb-24 lg:pt-52 lg:pb-40 grid lg:grid-cols-2 gap-16 items-center relative">
-        <div class="absolute top-0 left-0 w-full h-full hero-glow-1 -z-10 pointer-events-none"></div>
-        <div class="z-10 relative animate-on-scroll">
-            <a href="pricing.html" class="inline-flex items-center gap-3 bg-white/5 border border-white/10 px-4 py-2 rounded-full text-[11px] text-[#5bc0be] font-bold mb-10 hover:bg-white/10 transition-all cursor-pointer group tracking-wider uppercase">
-                <span class="flex h-2 w-2 rounded-full bg-[#5bc0be] animate-ping"></span>
-                <span class="opacity-80">Live Now:</span> Zero-fee Global Settlement
-                <i data-lucide="arrow-right" class="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform"></i>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container nav">
+            <a class="brand" href="index.html" aria-label="Nexus — home">
+                <span class="brand__mark">N</span>
+                <span class="brand__name">nexus<b>.</b></span>
             </a>
-            <h2 class="text-5xl sm:text-7xl lg:text-[100px] font-black leading-[0.9] lg:leading-[0.85] mb-10 tracking-tighter">
-                The Apex of <br/><span class="text-transparent bg-clip-text bg-gradient-to-br from-[#5bc0be] via-cyan-400 to-blue-500 text-glow">Banking.</span>
-            </h2>
-            <p class="text-xl text-gray-400 mb-14 max-w-lg leading-relaxed font-medium">
-                Experience a financial ecosystem built for the digital elite. Radical transparency, instant settlement, and institutional-grade security.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-6">
-                <a href="signup.html" class="shimmer bg-white text-[#050810] px-12 py-5 rounded-2xl font-black text-sm hover:bg-[#5bc0be] transition-all duration-500 shadow-[0_20px_40px_-10px_rgba(255,255,255,0.2)] active:scale-95 text-center flex items-center justify-center gap-2">
-                    Open Free Account
-                    <i data-lucide="chevron-right" class="w-4 h-4"></i>
-                </a>
-                <a href="#features" class="bg-white/5 border border-white/10 px-12 py-5 rounded-2xl font-black text-sm hover:bg-white/10 transition-all duration-300 backdrop-blur-md active:scale-95 text-center border-white/20">View Features</a>
-            </div>
-            
-            <div class="mt-20 flex flex-wrap items-center gap-x-16 gap-y-8">
-                <div class="flex flex-col">
-                    <span class="text-[10px] font-black tracking-[0.3em] text-[#5bc0be] uppercase mb-3">Security Protocol</span>
-                    <div class="flex gap-6 opacity-60">
-                        <i data-lucide="shield-check" class="w-6 h-6 hover:text-[#5bc0be] transition-colors cursor-help"></i>
-                        <i data-lucide="cpu" class="w-6 h-6 hover:text-[#5bc0be] transition-colors cursor-help"></i>
-                        <i data-lucide="fingerprint" class="w-6 h-6 hover:text-[#5bc0be] transition-colors cursor-help"></i>
-                    </div>
-                </div>
-                <div class="h-12 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent hidden md:block"></div>
-                <div class="flex flex-col">
-                    <span class="text-[10px] font-black tracking-[0.3em] text-gray-500 uppercase mb-2">Network Status</span>
-                    <div class="flex items-center gap-3">
-                        <div class="flex -space-x-2">
-                            <div class="w-9 h-9 rounded-xl border-2 border-[#050810] bg-gray-800 flex items-center justify-center text-[11px] font-black">JD</div>
-                            <div class="w-9 h-9 rounded-xl border-2 border-[#050810] bg-[#3a506b] flex items-center justify-center text-[11px] font-black">AM</div>
-                            <div class="w-9 h-9 rounded-xl border-2 border-[#050810] bg-[#5bc0be] flex items-center justify-center text-[11px] font-black text-[#050810]">SK</div>
-                        </div>
-                        <span class="text-xs font-bold text-gray-400">+12,402 Active Nodes</span>
-                    </div>
-                </div>
+            <nav class="nav__links" aria-label="Primary">
+                <a class="nav__link" href="about.html">About</a>
+                <a class="nav__link" href="pricing.html">Pricing</a>
+                <a class="nav__link" href="#features">Features</a>
+            </nav>
+            <div class="nav__actions">
+                <a class="nav__login" href="login.html">Log in</a>
+                <a class="btn btn--dark btn--sm" href="signup.html">Open account</a>
+                <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
             </div>
         </div>
-        
-        <div class="relative z-10 hidden lg:block group">
-            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] hero-glow-2 -z-10 rounded-full blur-[100px] opacity-50 group-hover:opacity-100 transition-opacity duration-1000"></div>
-            <!-- Animated Background Grid -->
-            <div class="absolute inset-0 -m-20 opacity-10 [mask-image:radial-gradient(ellipse_at_center,white,transparent)] pointer-events-none">
-                <svg class="h-full w-full stroke-white/20" fill="none">
-                    <defs>
-                        <pattern id="grid-hero" width="40" height="40" patternUnits="userSpaceOnUse">
-                            <path d="M0 40V.5H40" />
-                        </pattern>
-                    </defs>
-                    <rect width="100%" height="100%" fill="url(#grid-hero)" />
-                </svg>
-            </div>
+    </header>
 
-            <div class="relative w-full aspect-square flex items-center justify-center perspective-1000">
-                <!-- Decorative Glows -->
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#5bc0be]/5 rounded-full blur-[120px] animate-pulse"></div>
+    <!-- Mobile nav -->
+    <div class="mobile-nav" aria-hidden="true">
+        <button class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x"></i></button>
+        <nav class="mobile-nav__links" aria-label="Mobile">
+            <a class="mobile-nav__link" href="index.html" aria-current="true">Home</a>
+            <a class="mobile-nav__link" href="about.html">About</a>
+            <a class="mobile-nav__link" href="pricing.html">Pricing</a>
+            <a class="mobile-nav__link" href="#features">Features</a>
+        </nav>
+        <div class="mobile-nav__actions">
+            <a class="btn btn--dark" href="signup.html">Open account</a>
+            <a class="btn btn--ghost" href="login.html">Log in</a>
+        </div>
+    </div>
 
-                <!-- Floating Activity Bubble 1 -->
-                <div class="absolute top-4 right-0 bg-white/5 backdrop-blur-3xl border border-white/20 p-5 rounded-2xl shadow-2xl animate-float-slow z-30 card-refraction">
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 bg-green-500/20 rounded-xl flex items-center justify-center text-green-400">
-                            <i data-lucide="arrow-up-right" class="w-5 h-5"></i>
-                        </div>
-                        <div>
-                            <div class="text-[9px] text-gray-500 font-black uppercase tracking-widest">Instant Settlement</div>
-                            <div class="text-base font-black">+$4,820.50</div>
-                        </div>
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container hero__grid">
+                <div class="hero__copy reveal">
+                    <span class="eyebrow">Personal finance, rebuilt</span>
+                    <h1 class="display display--lg">Banking that just works, <em>everywhere</em>.</h1>
+                    <p class="lede">One account to spend, save, and send money across 150+ countries — with transparent fees and real-time clarity on every move.</p>
+                    <div class="hero__cta">
+                        <a class="btn btn--primary btn--lg" href="signup.html">Open your account <i data-lucide="arrow-right"></i></a>
+                        <a class="btn btn--ghost btn--lg" href="#features">See how it works</a>
+                    </div>
+                    <div class="hero__trust">
+                        <div class="trust__item"><span class="trust__label">Free forever</span><span class="trust__val">$0 / month</span></div>
+                        <div class="trust__item"><span class="trust__label">Countries served</span><span class="trust__val mononum">150+</span></div>
+                        <div class="trust__item"><span class="trust__label">App rating</span><span class="trust__val mononum">4.8 ★</span></div>
                     </div>
                 </div>
 
-                <!-- Floating Activity Bubble 2 -->
-                <div class="absolute bottom-10 left-[-40px] bg-white/5 backdrop-blur-3xl border border-white/20 p-5 rounded-2xl shadow-2xl animate-float z-30 card-refraction anim-delay-neg-2s">
-                    <div class="flex items-center gap-4">
-                        <div class="w-10 h-10 bg-cyan-500/20 rounded-xl flex items-center justify-center text-cyan-400">
-                            <i data-lucide="refresh-cw" class="w-5 h-5 animate-spin-slow"></i>
+                <div class="reveal" data-ledger>
+                    <div class="ledger">
+                        <div class="ledger__topbar">
+                            <span class="ledger__title">Everyday account</span>
+                            <span class="ledger__live"><i class="ledger__pulse"></i>Live</span>
                         </div>
-                        <div>
-                            <div class="text-[9px] text-gray-500 font-black uppercase tracking-widest">Auto-Invest</div>
-                            <div class="text-base font-black">Active Vault</div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Main Visual: Premium Mock Card -->
-                <div class="relative z-20 w-[480px] h-[300px] bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-3xl border border-white/30 rounded-[3rem] p-12 flex flex-col justify-between shadow-[0_80px_160px_-40px_rgba(0,0,0,0.7)] floating-card hover:rotate-2 hover:scale-105 transition-all duration-700 cursor-none group/card card-refraction ring-1 ring-white/20">
-                    <div class="flex justify-between items-start">
-                        <div class="flex flex-col gap-1">
-                            <div class="text-[10px] font-black tracking-[0.4em] uppercase opacity-40">Titanium Series</div>
-                            <div class="text-3xl font-black tracking-tighter">NEXUS<span class="text-[#5bc0be]">.</span></div>
-                        </div>
-                        <div class="w-14 h-12 bg-white/10 rounded-xl flex items-center justify-center border border-white/20">
-                            <i data-lucide="contactless" class="w-7 h-7 text-white/90"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="flex flex-col gap-8">
-                        <div class="flex gap-5">
-                            <div class="w-14 h-10 bg-gradient-to-br from-yellow-400/30 to-yellow-600/30 rounded-lg border border-yellow-500/40 flex items-center justify-center overflow-hidden relative">
-                                <div class="absolute inset-0 grid grid-cols-3 gap-px opacity-30">
-                                    <div class="border-b border-r border-yellow-500/50"></div>
-                                    <div class="border-b border-r border-yellow-500/50"></div>
-                                    <div class="border-b border-yellow-500/50"></div>
-                                    <div class="border-r border-yellow-500/50"></div>
-                                    <div class="border-r border-yellow-500/50"></div>
-                                    <div></div>
+                        <div class="ledger__body">
+                            <div class="ledger__balance">
+                                <div>
+                                    <span class="eyebrow">Available balance</span>
+                                    <div class="amount mononum" data-balance>$18,420</div>
+                                    <span class="ledger__caption">Your USD balance, updating live</span>
                                 </div>
+                                <span class="delta">+1.6% this week</span>
                             </div>
-                            <div class="font-mono text-3xl tracking-[0.2em] text-white/95">•••• 4092</div>
-                        </div>
-                        <div class="flex justify-between items-end">
-                            <div class="flex flex-col gap-1">
-                                <span class="text-[8px] uppercase tracking-[0.3em] opacity-40 font-bold">Priority Cardholder</span>
-                                <span class="text-sm font-black tracking-wider uppercase">Alexander Morgan</span>
-                            </div>
-                            <div class="relative w-16 h-10">
-                                <div class="absolute right-0 w-10 h-10 rounded-full bg-red-600/80 mix-blend-screen"></div>
-                                <div class="absolute right-6 w-10 h-10 rounded-full bg-orange-500/80 mix-blend-screen"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Floating Element -->
-                <div class="hidden lg:block absolute -bottom-16 -right-16 bg-white/5 backdrop-blur-3xl border border-white/20 p-8 rounded-[2.5rem] shadow-2xl animate-bounce-slow card-refraction">
-                    <div class="flex items-center gap-5">
-                        <div class="w-12 h-12 bg-[#5bc0be]/20 rounded-2xl flex items-center justify-center text-[#5bc0be]">
-                            <i data-lucide="trending-up" class="w-6 h-6"></i>
-                        </div>
-                        <div>
-                            <div class="text-[10px] text-gray-500 font-black uppercase tracking-widest">Elite Yield</div>
-                            <div class="text-2xl font-black">5.25% <span class="text-sm font-bold opacity-40">APY</span></div>
+                            <div class="ledger__transfer">
+                                <span class="eyebrow ledger__tlabel">Try it — send money</span>
+                                <div class="trow"><span>You send</span><b>GBP <input class="trow-input" data-tsend value="500" aria-label="Amount to send" inputmode="decimal"></b></div>
+                                <div class="trow"><span>Estimated fee</span><b class="mononum" data-tfee>$2.05</b></div>
+                                <div class="trow"><span>Rate</span><b class="mononum">1 GBP = $0.79</b></div>
+                                <div class="trow"><span>Recipient gets</span><b class="mononum" data-tgets>$392.87</b></div>
+                                <div class="trow trow--deduct"><span>Leaves your balance</span><b class="mononum" data-deduct>≈ $394.25</b></div>
+                            </div>
+
+                            <div class="ledger__chart">
+                                <div class="ledger__chart-head">
+                                    <span class="eyebrow">Your balance · last 60 days</span>
+                                    <span class="ledger__chart-hint">Hover</span>
+                                </div>
+                                <div data-chart></div>
+                                <table class="sr-only">
+                                    <caption>Daily USD balance, last 60 days</caption>
+                                    <thead><tr><th scope="col">Day</th><th scope="col">Balance</th></tr></thead>
+                                    <tbody>
+                                        <tr><td>60 days ago</td><td>$17,646</td></tr>
+                                        <tr><td>Today</td><td>$18,420</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Proof / stats -->
+        <section class="section section--tint">
+            <div class="container">
+                <div class="stat-grid">
+                    <div class="stat reveal"><span class="stat__num" data-prefix="$" data-count="12" data-suffix="B+">$12B+</span><span class="stat__label">Processed across the network</span></div>
+                    <div class="stat reveal"><span class="stat__num" data-count="2" data-suffix="M+">2M+</span><span class="stat__label">People managing money here</span></div>
+                    <div class="stat reveal"><span class="stat__num" data-count="150" data-suffix="+">150+</span><span class="stat__label">Countries and markets</span></div>
+                    <div class="stat reveal"><span class="stat__num" data-count="99.9" data-suffix="%" data-decimals="1">99.9%</span><span class="stat__label">Service uptime</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="section" id="features">
+            <div class="container">
+                <div class="sec-head reveal">
+                    <span class="eyebrow">The essentials</span>
+                    <h2>Everything you need to move money with confidence.</h2>
+                    <p>Built on the principle that finance should be simple and honest — no fine print, no surprise charges.</p>
+                </div>
+                <div class="grid grid--3">
+                    <article class="card reveal">
+                        <span class="card__icon"><i data-lucide="chart-column"></i></span>
+                        <h3>Spending, understood</h3>
+                        <p>Every transaction is categorised automatically, so you always know where your money is going.</p>
+                    </article>
+                    <article class="card reveal">
+                        <span class="card__icon"><i data-lucide="globe"></i></span>
+                        <h3>Global transfers, fair exchange</h3>
+                        <p>Send to 150+ countries at the real mid-market rate. The fee is shown before you confirm, always.</p>
+                    </article>
+                    <article class="card reveal">
+                        <span class="card__icon"><i data-lucide="wallet"></i></span>
+                        <h3>Savings that stay yours</h3>
+                        <p>Set a savings goal or an automatic rule, and watch it build. Funds are yours to move any time.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- How it works -->
+        <section class="section section--tint">
+            <div class="container">
+                <div class="sec-head reveal">
+                    <span class="eyebrow">How it works</span>
+                    <h2>Open in minutes. No credit check, no waiting.</h2>
+                </div>
+                <div class="grid grid--3">
+                    <div class="step reveal">
+                        <span class="step__idx">01</span>
+                        <div><h3>Enter a few details</h3><p>Create your account with an email and verify your identity. That's it.</p></div>
+                    </div>
+                    <div class="step reveal">
+                        <span class="step__idx">02</span>
+                        <div><h3>Add money</h3><p>Link a card or bank account and move funds over in a couple of taps.</p></div>
+                    </div>
+                    <div class="step reveal">
+                        <span class="step__idx">03</span>
+                        <div><h3>Spend and send</h3><p>Use your card anywhere, or send money abroad at the live rate.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- App / CTA -->
+        <section class="section section--navy">
+            <div class="container cta-grid">
+                <div class="reveal">
+                    <span class="eyebrow">Get the app</span>
+                    <h2 class="display" style="color:#fff">Your money, in your pocket.</h2>
+                    <p class="lede" style="margin-top:1.25rem; color:rgba(255,255,255,.72)">Issue a virtual card instantly, freeze a lost card, split a bill, and watch spending land in real time — all from your phone.</p>
+                    <div class="store-row">
+                        <a href="download.html" class="store-btn store-btn--light"><i data-lucide="apple"></i><span><span class="lbl">Download on the</span><span class="sub">App Store</span></span></a>
+                        <a href="download.html" class="store-btn" style="background:transparent;border:1px solid rgba(255,255,255,.25)"><i data-lucide="play"></i><span><span class="lbl">Get it on</span><span class="sub">Google Play</span></span></a>
+                    </div>
+                </div>
+                <div class="reveal">
+                    <div class="ledger">
+                        <div class="ledger__topbar">
+                            <div class="ledger__dots"><span></span><span></span><span></span></div>
+                            <span class="ledger__title">On your phone</span>
+                        </div>
+                        <div class="ledger__body">
+                            <div class="phone-row">
+                                <span class="n"><i data-lucide="credit-card"></i></span>
+                                <div><h4>Virtual card your way</h4><p>Create a disposable card with its own limits, any time.</p></div>
+                            </div>
+                            <div class="phone-row">
+                                <span class="n"><i data-lucide="users"></i></span>
+                                <div><h4>Split bills together</h4><p>Scan a dinner, invite friends, and settle in one tap.</p></div>
+                            </div>
+                            <div class="phone-row">
+                                <span class="n"><i data-lucide="lock"></i></span>
+                                <div><h4>Control in real time</h4><p>Freeze a card, set limits, and review every charge instantly.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Stats Section -->
-    <section class="border-y border-gray-800 bg-[#1c2541]/30">
-        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-sm font-semibold uppercase tracking-wider text-gray-400">
-            <div class="animate-on-scroll">
-                <div class="text-4xl font-bold text-white mb-2 font-mono stat-number">$12B+</div>
-                Processed
-            </div>
-            <div class="animate-on-scroll anim-delay-100">
-                <div class="text-4xl font-bold text-white mb-2 font-mono stat-number">2M+</div>
-                Active Users
-            </div>
-            <div class="animate-on-scroll anim-delay-200">
-                <div class="text-4xl font-bold text-white mb-2 font-mono stat-number">150+</div>
-                Countries
-            </div>
-            <div class="animate-on-scroll anim-delay-300">
-                <div class="text-4xl font-bold text-white mb-2 font-mono stat-number">99.9%</div>
-                Uptime
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="max-w-7xl mx-auto px-6 py-32 pb-48">
-        <div class="text-center mb-24 animate-on-scroll">
-            <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Everything you need to <span class="text-[#5bc0be]">scale.</span></h2>
-            <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">We've reimagined banking from the ground up to give you more control, better insights, and faster growth.</p>
-        </div>
-        
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Feature 1 -->
-            <div class="group bg-white/[0.02] border border-white/5 p-10 rounded-[2.5rem] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 animate-on-scroll cursor-pointer">
-                <div class="w-14 h-14 bg-blue-500/10 rounded-2xl flex items-center justify-center text-blue-400 mb-8 group-hover:scale-110 transition-transform duration-500">
-                    <i data-lucide="bar-chart-3" class="w-7 h-7"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Smart Analytics</h3>
-                <p class="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors">Track your spending automatically. Our AI categorizes your expenses so you always know where your money goes.</p>
-            </div>
-            
-            <!-- Feature 2 -->
-            <div class="group bg-gradient-to-br from-[#5bc0be]/10 to-transparent border border-[#5bc0be]/20 p-10 rounded-[2.5rem] hover:border-[#5bc0be]/40 transition-all duration-500 relative overflow-hidden animate-on-scroll cursor-pointer">
-                <div class="absolute top-0 right-0 w-32 h-32 bg-[#5bc0be]/10 blur-[50px] -mr-16 -mt-16"></div>
-                <div class="w-14 h-14 bg-[#5bc0be]/20 rounded-2xl flex items-center justify-center text-[#5bc0be] mb-8 group-hover:rotate-12 transition-all duration-500">
-                    <i data-lucide="globe" class="w-7 h-7"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Global Transfers</h3>
-                <p class="text-gray-400 leading-relaxed">Send money to over 150 countries instantly holding real exchange rates with absolute zero hidden fees.</p>
-            </div>
-            
-            <!-- Feature 3 -->
-            <div class="group bg-white/[0.02] border border-white/5 p-10 rounded-[2.5rem] hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 animate-on-scroll cursor-pointer">
-                <div class="w-14 h-14 bg-purple-500/10 rounded-2xl flex items-center justify-center text-purple-400 mb-8 group-hover:scale-110 transition-transform duration-500">
-                    <i data-lucide="zap" class="w-7 h-7"></i>
-                </div>
-                <h3 class="text-xl font-bold mb-4">Automated Savings</h3>
-                <p class="text-gray-500 leading-relaxed group-hover:text-gray-400 transition-colors">Set rules to auto-save based on your income, or round up your daily purchases into an investment portfolio.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- App Preview Section -->
-    <section class="py-32 bg-[#080b14] relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(91,192,190,0.05),transparent)] pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-24 items-center">
-            <div class="relative animate-on-scroll">
-                <div class="absolute inset-0 bg-[#5bc0be] opacity-10 blur-[120px] rounded-full"></div>
-                <!-- Premium Phone Frame -->
-                <div class="bg-[#050810] rounded-[3.5rem] border-[12px] border-[#1a1f2e] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)] overflow-hidden relative z-10 aspect-[9/19] max-w-[320px] mx-auto ring-1 ring-white/10">
-                    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-7 bg-[#1a1f2e] rounded-b-3xl z-20"></div>
-                    
-                    <!-- Fake App UI -->
-                    <div class="p-8 h-full flex flex-col pt-12">
-                        <div class="flex justify-between items-center mb-10">
-                            <div>
-                                <p class="text-[10px] uppercase tracking-widest text-gray-500 font-bold mb-1">Available Balance</p>
-                                <p class="text-3xl font-bold">$42,091<span class="text-gray-500 text-lg">.50</span></p>
-                            </div>
-                            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 border border-white/5 flex items-center justify-center">
-                                <i data-lucide="bell" class="w-5 h-5 text-gray-400"></i>
-                            </div>
-                        </div>
-                        
-                        <div class="bg-gradient-to-br from-[#1c2541] to-[#0b132b] rounded-3xl p-6 mb-10 border border-white/5 shadow-xl relative overflow-hidden group cursor-pointer">
-                            <div class="absolute top-0 right-0 p-4 opacity-20">
-                                <i data-lucide="wifi" class="w-4 h-4 rotate-90"></i>
-                            </div>
-                            <p class="font-mono text-xs tracking-[0.2em] text-[#5bc0be] mb-6">•••• 4092</p>
-                            <div class="flex justify-between items-end">
-                                <div>
-                                    <p class="text-[8px] uppercase tracking-widest text-gray-500 mb-1">Limit Used</p>
-                                    <p class="text-xs font-bold">$2,400.00 <span class="text-[10px] text-gray-600 font-normal">/ $10k</span></p>
-                                </div>
-                                <div class="w-8 h-5 rounded bg-white/10 border border-white/10"></div>
-                            </div>
-                        </div>
-
-                        <p class="font-bold mb-6 text-xs uppercase tracking-widest text-gray-500">Activity</p>
-                        <div class="flex-1 space-y-6">
-                            <div class="flex justify-between items-center group cursor-pointer">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-11 h-11 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-[#5bc0be]/10 transition-colors">
-                                        <i data-lucide="coffee" class="w-5 h-5 text-gray-400 group-hover:text-[#5bc0be]"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-semibold">Starbucks</p>
-                                        <p class="text-[10px] text-gray-600">Today, 08:42 AM</p>
-                                    </div>
-                                </div>
-                                <p class="text-sm font-bold">-$4.50</p>
-                            </div>
-                            <div class="flex justify-between items-center group cursor-pointer">
-                                <div class="flex items-center gap-4">
-                                    <div class="w-11 h-11 bg-white/5 rounded-2xl flex items-center justify-center group-hover:bg-[#5bc0be]/10 transition-colors">
-                                        <i data-lucide="shopping-bag" class="w-5 h-5 text-gray-400 group-hover:text-[#5bc0be]"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm font-semibold">Apple Store</p>
-                                        <p class="text-[10px] text-gray-600">Yesterday, 04:15 PM</p>
-                                    </div>
-                                </div>
-                                <p class="text-sm font-bold">-$999.00</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="animate-on-scroll">
-                <h2 class="text-5xl md:text-6xl font-bold mb-8 tracking-tighter leading-[1.1]">The bank that <br/><span class="text-[#5bc0be]">lives in your pocket.</span></h2>
-                <p class="text-xl text-gray-400 mb-12 leading-relaxed">Download the Nexus app to instantly issue virtual cards, freeze physical cards, manage limits, and split bills with friends with a single tap.</p>
-                <div class="flex flex-wrap gap-4">
-                    <button class="bg-white text-black px-8 py-4 rounded-2xl flex items-center gap-4 hover:bg-[#5bc0be] transition-all duration-300 group">
-                        <i class="fa-brands fa-apple text-[1.75rem] leading-none"></i>
-                        <div class="text-left leading-tight">
-                            <span class="text-[10px] block uppercase font-bold opacity-60">Download on the</span>
-                            <span class="font-bold text-xl tracking-tight">App Store</span>
-                        </div>
-                    </button>
-                    <button class="bg-white/5 border border-white/10 text-white px-8 py-4 rounded-2xl flex items-center gap-4 hover:bg-white/10 transition-all duration-300 group">
-                        <i class="fa-brands fa-google-play text-[1.6rem] leading-none text-[#5bc0be]"></i>
-                        <div class="text-left leading-tight">
-                            <span class="text-[10px] block uppercase font-bold opacity-60">Get it on</span>
-                            <span class="font-bold text-xl tracking-tight">Google Play</span>
-                        </div>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="border-t border-white/5 bg-[#050810] pt-24 pb-12">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-12 gap-16 mb-24">
-            <div class="md:col-span-4">
-                <div class="flex items-center gap-2 mb-8">
-                    <div class="w-8 h-8 bg-[#5bc0be] rounded-lg flex items-center justify-center">
-                        <i data-lucide="shield-check" class="w-5 h-5 text-[#050810]"></i>
-                    </div>
-                    <h1 class="text-xl font-bold tracking-tighter text-white">NEXUS<span class="text-[#5bc0be]">.</span></h1>
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a class="brand" href="index.html">
+                        <span class="brand__mark">N</span>
+                        <span class="brand__name">nexus<b>.</b></span>
+                    </a>
+                    <p>Nexus is a financial technology company, not a bank. Banking services are provided by our partner banks.</p>
                 </div>
-                <p class="text-gray-500 text-sm leading-relaxed mb-8 max-w-xs">
-                    Reimagining the world's financial ecosystem. Nexus is a financial technology company, not a bank. Banking services provided by our partner banks.
-                </p>
-                <div class="flex gap-4">
-                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-500 hover:text-[#5bc0be] hover:bg-white/10 transition-all" aria-label="Follow us on X" title="Follow us on X"><i data-lucide="twitter" class="w-5 h-5"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-500 hover:text-[#5bc0be] hover:bg-white/10 transition-all" aria-label="Follow us on LinkedIn" title="Follow us on LinkedIn"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
-                    <a href="#" class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-500 hover:text-[#5bc0be] hover:bg-white/10 transition-all" aria-label="View our GitHub" title="View our GitHub"><i data-lucide="github" class="w-5 h-5"></i></a>
+                <div class="footer__col">
+                    <h5>Products</h5>
+                    <ul>
+                        <li><a href="pricing.html">Cards</a></li>
+                        <li><a href="pricing.html">Savings</a></li>
+                        <li><a href="pricing.html">Transfers</a></li>
+                        <li><a href="download.html">Mobile app</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="about.html">Careers</a></li>
+                        <li><a href="about.html">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="about.html">Contact</a></li>
+                        <li><a href="download.html">Download</a></li>
+                        <li><a href="login.html">Log in</a></li>
+                        <li><a href="signup.html">Open account</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h5>Stay in the loop</h5>
+                    <p style="color:var(--muted);font-size:.9rem">Occasional updates on features and global launches. No spam.</p>
+                    <form class="newsletter" novalidate>
+                        <input class="input" type="email" placeholder="you@example.com" aria-label="Email address" required>
+                        <button class="btn btn--primary btn--sm" type="submit">Join</button>
+                    </form>
                 </div>
             </div>
-            
-            <div class="md:col-span-2">
-                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-8">Products</h4>
-                <ul class="space-y-4 text-sm text-gray-500 font-medium">
-                    <li><a href="#" class="hover:text-white transition-colors">Personal</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Business</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Invoicing</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Cards</a></li>
-                </ul>
-            </div>
-            
-            <div class="md:col-span-2">
-                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-8">Company</h4>
-                <ul class="space-y-4 text-sm text-gray-500 font-medium">
-                    <li><a href="#" class="hover:text-white transition-colors">About</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Careers</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Press</a></li>
-                    <li><a href="#" class="hover:text-white transition-colors">Contact</a></li>
-                </ul>
-            </div>
-            
-            <div class="md:col-span-4">
-                <h4 class="font-bold text-white text-sm uppercase tracking-widest mb-8">Subscribe</h4>
-                <p class="text-sm text-gray-500 mb-6">Get the latest updates on new features and global expansions.</p>
-                <form id="subscribe-form" class="flex gap-2">
-                    <input type="email" placeholder="Email address" required class="bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#5bc0be] transition-colors flex-1">
-                    <button type="submit" class="bg-white text-[#050810] px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#5bc0be] transition-all">Join</button>
-                </form>
-            </div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-6 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-xs text-gray-600 font-medium">
-                &copy; 2026 Nexus Financial Technologies Inc.
-            </div>
-            <div class="flex gap-8 text-xs text-gray-600 font-medium">
-                <a href="#" class="hover:text-white transition-colors">Privacy Policy</a>
-                <a href="#" class="hover:text-white transition-colors">Terms of Service</a>
-                <a href="#" class="hover:text-white transition-colors">Cookie Settings</a>
+            <div class="footer__base">
+                <span>© 2026 Nexus Financial Technologies Inc.</span>
+                <div class="footer__legal">
+                    <a href="#">Privacy policy</a>
+                    <a href="#">Terms of service</a>
+                    <a href="#">Cookie settings</a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="js/script.js"></script>
-    <script>
-        // Initialize Lucide Icons
-        const initLucide = () => {
-            if (typeof lucide !== 'undefined') {
-                lucide.createIcons();
-            }
-        };
-
-        // Fallback: Ensure everything is visible even if script.js fails
-        setTimeout(() => {
-            // 1. Remove Preloader
-            const preloader = document.getElementById('preloader');
-            if (preloader && !preloader.classList.contains('fade-out-loader')) {
-                preloader.classList.add('fade-out-loader');
-                setTimeout(() => {
-                    if (preloader.parentNode) preloader.remove();
-                }, 800);
-            }
-
-            // 2. Trigger Animations
-            document.querySelectorAll('.animate-on-scroll').forEach(el => {
-                if (!el.classList.contains('fade-in')) {
-                    el.classList.add('fade-in');
-                }
-            });
-
-            // 3. Ensure Icons
-            initLucide();
-        }, 1500);
-
-        // Immediate Lucide init
-        initLucide();
-    </script>
 </body>
 </html>
