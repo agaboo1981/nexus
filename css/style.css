@@ -23,7 +23,7 @@
   --step-body:  clamp(1.0625rem, 1rem + 0.25vw, 1.1875rem);    /* 17-19 */
   --step-lead:  clamp(1.25rem, 1.1rem + 0.7vw, 1.625rem);      /* 20-26 */
   --step-head:  clamp(2rem, 1.3rem + 3.2vw, 4rem);             /* 32-64 */
-  --display:    clamp(2.2rem, 9vw, 8.5rem);                    /* poster */
+  --display:    clamp(1.8rem, 9vw, 8.5rem);                    /* poster */
 
   --margin: clamp(20px, 3.5vw, 56px);
   --ease: cubic-bezier(.16, 1, .3, 1);
@@ -398,7 +398,7 @@ h1, h2, h3 { font-weight: 700; line-height: .95; letter-spacing: -.02em; text-tr
 .meter[data-strength="3"] i:nth-child(-n+3) { background: var(--accent); }
 .auth__foot { margin-top: 1.8rem; font-size: var(--step-body); }
 .auth__badges { display: grid; gap: .4rem; font-size: var(--step-body); opacity: .9; }
-.auth__claim h2 { font-size: clamp(2.2rem, 5vw, 4rem); }
+.auth__claim h2 { font-size: clamp(1.8rem, 5vw, 4rem); }
 .auth__photo { margin-top: 2.5rem; }
 .auth__proof {
   margin-top: 2.5rem; background: #fff; color: var(--ink);
@@ -441,6 +441,9 @@ h1, h2, h3 { font-weight: 700; line-height: .95; letter-spacing: -.02em; text-tr
   .auth__aside { min-height: 0; order: 2; }
   .auth__panel { order: 1; }
   .fees-wrap { overflow-x: auto; }
+}
+@media (max-width: 430px) {
+  .nav-actions .btn { display: none; }
 }
 @media (max-width: 560px) {
   .t-b, .t-c, .t-s { grid-column: span 12; }

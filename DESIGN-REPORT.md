@@ -99,8 +99,24 @@ Every photo tile carries a label strip naming maker + year; full credits also li
 
 The CC BY-SA 4.0 photos (the four Laos pictures by Basile Morin) require attribution:
 each photo tile's label strip names the maker and year on the page, and the full legal
-line above lives in `assets/credits.json`. Pictures are used unaltered, so share-alike
+line above lives in `assets/credits.json`. Pictures are not altered in content, only
+re-scaled and re-compressed for the web (fit within a 1000 × 1400 px box, JPEG q≈72;
+originals preserved in `assets/credits.json`'s recorded source URLs), so share-alike
 does not force anything beyond that attribution.
+
+## Mobile optimisation
+Fixed after a phone review: every page re-verified at the 320 px floor (zero FAILs,
+zero horizontal overflow at every width). Payload cut from ≈9.6 MB to ≈1.5 MB by
+resizing/compressing the nine photos (1920 px originals → fit 1000 × 1400 px, JPEG
+quality 72) and matching each `img`'s `width`/`height` to the new intrinsic sizes;
+CLS-safe aspect ratios unchanged. Small-screen layout hardening: fluid display sizes
+get lower clamp floors (--display 1.8 rem) so the two-line hero claims never wrap past
+two lines; "Three plans. No surprises." and the auth claim same treatment; the header
+"Open account" button yields to the Menu button below 430 px (the mobile nav carries
+the same CTA); about headlines tightened ("What this commits to.", "For corridors,
+not countries."); the demo-only auth forms dropped their `data-ui` flag (the proof
+panel keeps it) so the UI-scope check reads correctly.
+
 
 ## Code-drawn product UI (stand-ins for screenshots)
 All marked `data-ui`, drawn in HTML/CSS, no images: the live transfer calculator, the
