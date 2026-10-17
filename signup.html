@@ -3,80 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Open a Nexus account in minutes. No credit check, no monthly fees.">
+    <meta name="description" content="Open a Nexus account in about three minutes. No credit check, no monthly fee. A design concept.">
+    <meta name="theme-color" content="#2436ff">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-weight='700' font-size='20' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
     <title>Open an account — Nexus</title>
     <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="auth">
+    <main class="auth">
+        <aside class="auth__aside">
+            <a class="brand" href="index.html" aria-label="Nexus, home">
+                <span class="brand__mark brand__mark--paper">N</span>
+                <span>Nexus</span>
+            </a>
+            <div class="auth__claim">
+                <h2 class="head" style="max-width:14ch">
+                    <span class="line line--paper"><span>Money should</span></span>
+                    <span class="line line--paper"><span>move like this.</span></span>
+                </h2>
+                <p class="body" style="margin-top:1.2rem;max-width:34ch">No monthly fee on Standard, no minimum balance, no surprise charges. A virtual card the moment you open the account.</p>
+                <div class="auth__badges reveal" style="margin-top:1.6rem">
+                    <span>Instant virtual card</span>
+                    <span>150+ countries from day one</span>
+                    <span>Fee shown before every confirm</span>
+                </div>
+            </div>
+            <div class="auth__proof reveal" style="--d:.08s" data-ui>
+                <div class="frag__row"><span>You send</span><b class="num">GBP 500</b></div>
+                <div class="frag__row"><span>Fee, shown first</span><b class="num">£2.05</b></div>
+                <div class="frag__row"><span>They get</span><b class="num">$392.87</b></div>
+            </div>
+            <div class="auth__photos reveal" style="--d:.14s">
+                <img src="assets/colorful-clouds-and-blue-sky-with-water.jpg" width="1920" height="1200" alt="Clouds and blue sky reflected in still water at sunrise" loading="lazy" decoding="async">
+                <img src="assets/colorful-sky-with-orange-clouds-reflecting-in.jpg" width="1920" height="1280" alt="Orange clouds reflected in a paddy field at sunset" loading="lazy" decoding="async">
+                <img src="assets/aerial-view-of-shipping-containers-and-big.jpg" width="1920" height="1280" alt="Aerial view of container cranes at the Port of Tacoma" loading="lazy" decoding="async">
+            </div>
+        </aside>
+
         <div class="auth__panel">
             <div class="auth__box">
-                <a class="brand" href="index.html" aria-label="Nexus — home" style="margin-bottom:3rem">
-                    <span class="brand__mark">N</span>
-                    <span class="brand__name">nexus<b>.</b></span>
-                </a>
-
-                <div class="auth__form reveal">
-                    <h2>Open your account</h2>
-                    <p>Takes about 3 minutes. No credit check.</p>
-
-                    <form novalidate>
-                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
-                            <label class="field">First name
-                                <input class="input" type="text" name="firstName" placeholder="Jamie" autocomplete="given-name" required>
-                            </label>
-                            <label class="field">Last name
-                                <input class="input" type="text" name="lastName" placeholder="Rivera" autocomplete="family-name" required>
-                            </label>
-                        </div>
-                        <label class="field">Email address
-                            <input class="input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                <h1 class="reveal">Open your account</h1>
+                <p class="reveal" style="--d:.06s">Takes about three minutes. No credit check.</p>
+                <form data-demo data-ui novalidate class="reveal" style="--d:.12s">
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem">
+                        <label class="field-label">First name
+                            <input class="input" type="text" name="firstName" placeholder="Jamie" autocomplete="given-name" required>
                         </label>
-                        <label class="field">Create a password
-                            <input class="input" id="password" type="password" name="password" placeholder="At least 8 characters" autocomplete="new-password" required>
-                            <span class="hint">Use 8+ characters with a mix of letters and numbers.</span>
-                            <span class="meter" data-strength="0" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <label class="field-label">Last name
+                            <input class="input" type="text" name="lastName" placeholder="Rivera" autocomplete="family-name" required>
                         </label>
-
-                        <label class="check">
-                            <input type="checkbox" name="terms" required>
-                            <span>I agree to the <a style="color:var(--ink);font-weight:600" href="#">Terms</a> and <a style="color:var(--ink);font-weight:600" href="#">Privacy Policy</a>.</span>
-                        </label>
-
-                        <button class="btn btn--primary btn--lg" type="submit" style="width:100%">Create account</button>
-                    </form>
-
-                    <div class="auth__footer">
-                        Already a member? <a href="login.html" class="link">Log in</a>
                     </div>
-                </div>
+                    <label class="field-label">Email address
+                        <input class="input" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
+                    </label>
+                    <label class="field-label">Create a password
+                        <input class="input" id="password" type="password" name="password" placeholder="At least 8 characters" autocomplete="new-password" required>
+                        <span class="hint">Use 8 or more characters, with letters and a number.</span>
+                        <span class="meter" data-strength="0" aria-hidden="true"><i></i><i></i><i></i></span>
+                    </label>
+                    <label class="check">
+                        <input type="checkbox" name="terms" required>
+                        <span>I agree to the <a href="#" data-pin>Terms</a> and the <a href="#" data-pin>Privacy Policy</a>, which in a real product would live here.</span>
+                    </label>
+                    <button class="btn btn--accent" type="submit" style="width:100%">Open my account</button>
+                    <p class="form-msg" aria-live="polite"></p>
+                </form>
+                <p class="auth__foot reveal" style="--d:.18s">Already with us? <a class="tlink" href="login.html">Log in</a></p>
+                <p class="demo-note">A design concept, so nothing you type is stored or sent.</p>
             </div>
         </div>
-
-        <aside class="auth__aside">
-            <a class="brand" href="index.html" aria-label="Nexus — home">
-                <span class="brand__mark" style="background:#fff;color:var(--ink)">N</span>
-                <span class="brand__name" style="color:#fff">nexus<b>.</b></span>
-            </a>
-            <div class="reveal">
-                <span class="eyebrow">Free, forever</span>
-                <h2 class="display">Your money should move <em>like this.</em></h2>
-                <p class="lede">No monthly fee, no minimum balance, no surprise charges. Open an account and get a virtual card instantly.</p>
-                <div class="auth__badges">
-                    <span><i data-lucide="zap"></i>Instant virtual card</span>
-                    <span><i data-lucide="shield-check"></i>Real-time fraud alerts</span>
-                    <span><i data-lucide="globe"></i>150+ countries</span>
-                </div>
-            </div>
-            <span class="lede" style="font-size:.85rem;opacity:.65;font-family:var(--font-mono)">© 2026 Nexus Financial Technologies Inc.</span>
-        </aside>
-    </div>
-
-    <script src="https://unpkg.com/lucide@latest"></script>
+    </main>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>

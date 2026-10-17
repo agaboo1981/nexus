@@ -3,176 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nexus pricing — transparent plans with no hidden fees. Free, Premium, and Black. Cancel any time.">
+    <meta name="description" content="Nexus pricing: three plans, no surprises. The transfer fee is 0.41% with a £0.31 minimum, shown before you confirm.">
+    <meta name="theme-color" content="#2436ff">
+    <meta property="og:title" content="Nexus — Three plans, no surprises">
+    <meta property="og:description" content="Every plan carries the same transfer fee of 0.41%, shown before you confirm.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-weight='700' font-size='20' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
     <title>Pricing — Nexus</title>
     <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container nav">
-            <a class="brand" href="index.html" aria-label="Nexus — home">
+    <header class="site-head">
+        <div class="bar">
+            <a class="brand" href="index.html" aria-label="Nexus, home">
                 <span class="brand__mark">N</span>
-                <span class="brand__name">nexus<b>.</b></span>
+                <span>Nexus</span>
             </a>
-            <nav class="nav__links" aria-label="Primary">
-                <a class="nav__link" href="about.html">About</a>
-                <a class="nav__link" href="pricing.html" aria-current="true">Pricing</a>
-                <a class="nav__link" href="index.html#features">Features</a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="about.html">About</a>
+                <a href="pricing.html" aria-current="page">Pricing</a>
+                <a href="download.html">Download</a>
             </nav>
-            <div class="nav__actions">
-                <a class="nav__login" href="login.html">Log in</a>
-                <a class="btn btn--dark btn--sm" href="signup.html">Open account</a>
-                <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+            <div class="nav-actions">
+                <a class="nav-login" href="login.html">Log in</a>
+                <a class="btn btn--ink" href="signup.html">Open account</a>
+                <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
             </div>
         </div>
     </header>
 
-    <div class="mobile-nav" aria-hidden="true">
-        <button class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x"></i></button>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+        <div class="mobile-nav__top">
+            <a class="brand" href="index.html" aria-label="Nexus, home">
+                <span class="brand__mark brand__mark--paper">N</span>
+                <span>Nexus</span>
+            </a>
+            <button class="menu-btn mobile-nav__close">Close</button>
+        </div>
         <nav class="mobile-nav__links" aria-label="Mobile">
-            <a class="mobile-nav__link" href="index.html">Home</a>
-            <a class="mobile-nav__link" href="about.html">About</a>
-            <a class="mobile-nav__link" href="pricing.html" aria-current="true">Pricing</a>
-            <a class="mobile-nav__link" href="index.html#features">Features</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="download.html">Download</a>
         </nav>
         <div class="mobile-nav__actions">
-            <a class="btn btn--dark" href="signup.html">Open account</a>
-            <a class="btn btn--ghost" href="login.html">Log in</a>
+            <a class="btn btn--paper" href="signup.html">Open account</a>
+            <a class="btn btn--paper" href="login.html" style="background:none;color:#fff;outline:2px solid #fff;outline-offset:-2px">Log in</a>
         </div>
     </div>
 
     <main>
-        <section class="section" style="padding-top:clamp(6rem,13vw,10rem)">
-            <div class="container">
-                <div class="sec-head reveal" style="margin-inline:auto;text-align:center;max-width:640px">
-                    <span class="eyebrow">Pricing</span>
-                    <h2 style="margin-inline:auto">Fair, from day one.</h2>
-                    <p style="margin-inline:auto">Every plan includes real-time FX, instant virtual cards, and transparent fees. Switch plans or cancel any time.</p>
-
-                    <div class="toggle" role="group" aria-label="Billing period" style="margin-top:1.75rem">
-                        <button type="button" data-billing="monthly" class="is-active">Monthly</button>
-                        <button type="button" data-billing="yearly">Yearly · save 10%</button>
-                    </div>
+        <section class="field field--paper">
+            <div class="plans-wrap">
+                <h1 class="head reveal" style="font-size:clamp(2.6rem,5.5vw,5rem)">Three plans.<br>No surprises.</h1>
+                <div class="billing reveal" role="group" aria-label="Billing period" data-billing>
+                    <button type="button" data-billing="monthly" class="is-active">Monthly</button>
+                    <button type="button" data-billing="yearly">Yearly, 10% off</button>
                 </div>
-
-                <div class="pricing">
-                    <!-- Standard -->
-                    <article class="price-card reveal">
-                        <span class="price-card__name">Standard</span>
-                        <span class="price-card__desc">Everything you need for daily money.</span>
-                        <div class="price-card__num"><span data-monthly="$0" data-yearly="$0">$0</span><small>/mo, forever</small></div>
+                <div class="plans">
+                    <article class="plan plan--1 reveal">
+                        <h2 class="plan__name">Standard</h2>
+                        <p class="plan__price num"><span data-monthly="$0" data-yearly="$0">$0</span><small> / month</small></p>
                         <ul>
-                            <li><i data-lucide="check"></i>Free virtual card</li>
-                            <li><i data-lucide="check"></i>Real-time exchange rates</li>
-                            <li><i data-lucide="check"></i>Automatic spending insights</li>
-                            <li><i data-lucide="check"></i>Instant bill splitting</li>
+                            <li>Free virtual card</li>
+                            <li>Mid-market rate on transfers</li>
+                            <li>Spending filed automatically</li>
+                            <li>Instant bill splitting</li>
                         </ul>
-                        <a class="btn btn--ghost" href="signup.html">Get started</a>
+                        <a class="btn btn--accent" href="signup.html">Choose Standard</a>
                     </article>
-
-                    <!-- Premium -->
-                    <article class="price-card price-card--featured reveal">
-                        <span class="badge">Most popular</span>
-                        <span class="price-card__name">Premium</span>
-                        <span class="price-card__desc">For frequent travel and bigger balances.</span>
-                        <div class="price-card__num"><span data-monthly="$9.99" data-yearly="$8.99">$9.99</span><small data-monthly="/mo" data-yearly="/mo, billed yearly">/mo</small></div>
+                    <article class="plan plan--2 reveal" style="--d:.06s">
+                        <h2 class="plan__name">Premium</h2>
+                        <p class="plan__price num"><span data-monthly="$9.99" data-yearly="$8.99">$9.99</span><small data-monthly=" / month" data-yearly=" / month, billed yearly"> / month</small></p>
                         <ul>
-                            <li><i data-lucide="check"></i>Personalised metal card</li>
-                            <li><i data-lucide="check"></i>2× reward points</li>
-                            <li><i data-lucide="check"></i>Zero foreign-exchange fees</li>
-                            <li><i data-lucide="check"></i>Airport lounge access</li>
+                            <li>Everything in Standard</li>
+                            <li>Transfer fee capped at £1</li>
+                            <li>Metal card in your colour</li>
+                            <li>Four airport lounge visits a year</li>
                         </ul>
-                        <a class="btn btn--primary" href="signup.html">Go Premium</a>
+                        <a class="btn btn--paper" href="signup.html">Choose Premium</a>
                     </article>
-
-                    <!-- Black -->
-                    <article class="price-card reveal">
-                        <span class="price-card__name">Black</span>
-                        <span class="price-card__desc">The fullest experience, for the few.</span>
-                        <div class="price-card__num"><span data-monthly="$29.99" data-yearly="$24.99">$29.99</span><small data-monthly="/mo" data-yearly="/mo, billed yearly">/mo</small></div>
+                    <article class="plan plan--3 reveal" style="--d:.12s">
+                        <h2 class="plan__name">Black</h2>
+                        <p class="plan__price num"><span data-monthly="$29.99" data-yearly="$26.99">$29.99</span><small data-monthly=" / month" data-yearly=" / month, billed yearly"> / month</small></p>
                         <ul>
-                            <li><i data-lucide="check"></i>Priority concierge service</li>
-                            <li><i data-lucide="check"></i>Comprehensive travel insurance</li>
-                            <li><i data-lucide="check"></i>Top-tier savings yield</li>
-                            <li><i data-lucide="check"></i>Complimentary virtual assistant</li>
+                            <li>Everything in Premium</li>
+                            <li>Fee-free transfers worldwide</li>
+                            <li>Travel insurance included</li>
+                            <li>24/7 concierge on chat</li>
                         </ul>
-                        <a class="btn btn--ghost" href="signup.html">Join waitlist</a>
+                        <a class="btn btn--paper" href="signup.html">Choose Black</a>
                     </article>
                 </div>
+                <p class="plans-note reveal">Every plan carries the same transfer fee of 0.41% with a £0.31 minimum, shown before you confirm. Switch plans or cancel any time.</p>
+            </div>
+        </section>
 
-                <div class="reveal" style="display:flex;flex-wrap:wrap;gap:1rem 2.5rem;justify-content:center;margin-top:3rem">
-                    <span class="pill"><i data-lucide="shield-check"></i>No hidden fees</span>
-                    <span class="pill"><i data-lucide="calendar"></i>Cancel any time</span>
-                    <span class="pill"><i data-lucide="eye"></i>Fees shown upfront</span>
-                </div>
+        <section class="band" aria-label="Where Nexus works">
+            <div class="band__track" aria-hidden="true">
+                <span>London</span><i class="band__dot"></i><span>New York</span><i class="band__dot"></i><span>Tokyo</span><i class="band__dot"></i><span>Lagos</span><i class="band__dot"></i><span>São Paulo</span><i class="band__dot"></i><span>Mumbai</span><i class="band__dot"></i><span>Sydney</span><i class="band__dot"></i><span>Berlin</span><i class="band__dot"></i><span>Toronto</span><i class="band__dot"></i><span>Singapore</span><i class="band__dot"></i><span>Mexico City</span><i class="band__dot"></i><span>Nairobi</span><i class="band__dot"></i>
+                <span>London</span><i class="band__dot"></i><span>New York</span><i class="band__dot"></i><span>Tokyo</span><i class="band__dot"></i><span>Lagos</span><i class="band__dot"></i><span>São Paulo</span><i class="band__dot"></i><span>Mumbai</span><i class="band__dot"></i><span>Sydney</span><i class="band__dot"></i><span>Berlin</span><i class="band__dot"></i><span>Toronto</span><i class="band__dot"></i><span>Singapore</span><i class="band__dot"></i><span>Mexico City</span><i class="band__dot"></i><span>Nairobi</span><i class="band__dot"></i>
+            </div>
+            <p class="band__caption">One rate, the same in every corridor above.</p>
+        </section>
+
+        <section class="field field--surface">
+            <div class="fees-wrap">
+                <table class="fees reveal">
+                    <caption>The whole price list.</caption>
+                    <thead>
+                        <tr><th scope="col">What</th><th scope="col">Cost</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Standard plan</th><td class="num">$0 / month</td></tr>
+                        <tr><th scope="row">Premium plan</th><td class="num">$9.99 / month</td></tr>
+                        <tr><th scope="row">Black plan</th><td class="num">$29.99 / month</td></tr>
+                        <tr><th scope="row">Transfer fee, any plan</th><td class="num">0.41%, min £0.31</td></tr>
+                        <tr><th scope="row">Exchange rate markup</th><td class="num">None, mid-market</td></tr>
+                        <tr><th scope="row">Weekend markup</th><td class="num">None</td></tr>
+                        <tr><th scope="row">Virtual card</th><td class="num">Free</td></tr>
+                        <tr><th scope="row">Closing the account</th><td class="num">Free</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="world__grid" style="margin-top:3rem">
+                <figure class="shot reveal">
+                    <img src="assets/container-cranes-at-antwerp-harbor-close-up.jpg" width="1920" height="1440" alt="Container cranes close up at the port of Antwerp" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--blue num">
+                        <div class="shot__row"><span>EUR</span><span>Antwerp</span></div>
+                        <div class="shot__row"><span>Transfer fee</span><span>0.41%</span></div>
+                        <div class="shot__row"><span>Photo A. van Beem</span><span>2005</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.06s">
+                    <img src="assets/aerial-view-of-shipping-containers-and-big.jpg" width="1920" height="1280" alt="Aerial view of container cranes at the Port of Tacoma" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--ink num">
+                        <div class="shot__row"><span>USD</span><span>Tacoma</span></div>
+                        <div class="shot__row"><span>Transfer fee</span><span>0.41%</span></div>
+                        <div class="shot__row"><span>Photo B. Harris</span><span>2017</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.12s">
+                    <img src="assets/world-map-1689.jpg" width="1920" height="1657" alt="Engraved world map by Gerard van Schagen, 1689" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--paper num">
+                        <div class="shot__row"><span>GBP</span><span>Everywhere</span></div>
+                        <div class="shot__row"><span>Rate markup</span><span>None</span></div>
+                        <div class="shot__row"><span>Map G. van Schagen</span><span>1689</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.18s">
+                    <img src="assets/colorful-sky-with-orange-clouds-reflecting-in.jpg" width="1920" height="1280" alt="Orange clouds reflected in a paddy field at sunset in Laos" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--red num">
+                        <div class="shot__row"><span>LAK</span><span>Vientiane</span></div>
+                        <div class="shot__row"><span>Weekend markup</span><span>None</span></div>
+                        <div class="shot__row"><span>Photo B. Morin</span><span>2020</span></div>
+                    </figcaption>
+                </figure>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand">
-                    <a class="brand" href="index.html">
-                        <span class="brand__mark">N</span>
-                        <span class="brand__name">nexus<b>.</b></span>
-                    </a>
-                    <p>Nexus is a financial technology company, not a bank. Banking services are provided by our partner banks.</p>
-                </div>
-                <div class="footer__col">
-                    <h5>Products</h5>
-                    <ul>
-                        <li><a href="pricing.html">Cards</a></li>
-                        <li><a href="pricing.html">Savings</a></li>
-                        <li><a href="pricing.html">Transfers</a></li>
-                        <li><a href="download.html">Mobile app</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="about.html">Careers</a></li>
-                        <li><a href="about.html">Press</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="about.html">Contact</a></li>
-                        <li><a href="download.html">Download</a></li>
-                        <li><a href="login.html">Log in</a></li>
-                        <li><a href="signup.html">Open account</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h5>Stay in the loop</h5>
-                    <p style="color:var(--muted);font-size:.9rem">Occasional updates on features and global launches. No spam.</p>
-                    <form class="newsletter" novalidate>
-                        <input class="input" type="email" placeholder="you@example.com" aria-label="Email address" required>
-                        <button class="btn btn--primary btn--sm" type="submit">Join</button>
-                    </form>
-                </div>
+    <footer class="foot">
+        <div class="foot__grid">
+            <div class="f-tile f-tile--deep">
+                <p>Nexus is a design concept for a consumer fintech, not a bank. In a real version, banking services would come from regulated partner banks.</p>
+                <p class="f-tile__legal">© 2026 Nexus Financial Technologies Inc. Privacy, terms and cookies would live here.</p>
             </div>
-            <div class="footer__base">
-                <span>© 2026 Nexus Financial Technologies Inc.</span>
-                <div class="footer__legal">
-                    <a href="#">Privacy policy</a>
-                    <a href="#">Terms of service</a>
-                    <a href="#">Cookie settings</a>
-                </div>
+            <nav class="f-tile f-tile--paper" aria-label="Footer">
+                <ul class="f-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="download.html">Download</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="signup.html">Open account</a></li>
+                </ul>
+            </nav>
+            <div class="f-tile f-tile--red f-time">
+                <span class="small">London office</span>
+                <b class="num" data-clock>--:--</b>
             </div>
+            <div class="f-tile f-tile--blue">
+                <span class="small">Say hello</span>
+                <a class="f-mail" href="mailto:agaboodevelop@gmail.com">agaboodevelop@gmail.com</a>
+            </div>
+            <div class="f-tile f-tile--word">
+                <b>Nexus.</b>
+            </div>
+            <a class="f-tile f-tile--invite" href="signup.html">
+                <span class="f-invite">
+                    <p>Open your account</p>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                        <path d="M6 18 18 6M8 6h10v10" stroke-width="2"/>
+                    </svg>
+                </span>
+            </a>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>

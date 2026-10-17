@@ -3,164 +3,194 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="The story behind Nexus — building a financial system that is borderless, instant, and honest.">
+    <meta name="description" content="Why Nexus exists: moving your own money should be fast, clear and on your terms. A design concept for a consumer fintech.">
+    <meta name="theme-color" content="#ff3b1f">
+    <meta property="og:title" content="Nexus — Borderless by default">
+    <meta property="og:description" content="Why Nexus exists, and what it would do differently.">
+    <meta property="og:image" content="assets/aerial-view-of-shipping-containers-and-big.jpg">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-weight='700' font-size='20' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
     <title>About — Nexus</title>
     <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container nav">
-            <a class="brand" href="index.html" aria-label="Nexus — home">
-                <span class="brand__mark">N</span>
-                <span class="brand__name">nexus<b>.</b></span>
+    <header class="site-head">
+        <div class="bar">
+            <a class="brand" href="index.html" aria-label="Nexus, home">
+                <span class="brand__mark brand__mark--paper">N</span>
+                <span>Nexus</span>
             </a>
-            <nav class="nav__links" aria-label="Primary">
-                <a class="nav__link" href="about.html" aria-current="true">About</a>
-                <a class="nav__link" href="pricing.html">Pricing</a>
-                <a class="nav__link" href="index.html#features">Features</a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="about.html" aria-current="page">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="download.html">Download</a>
             </nav>
-            <div class="nav__actions">
-                <a class="nav__login" href="login.html">Log in</a>
-                <a class="btn btn--dark btn--sm" href="signup.html">Open account</a>
-                <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+            <div class="nav-actions">
+                <a class="nav-login" href="login.html">Log in</a>
+                <a class="btn btn--paper" href="signup.html">Open account</a>
+                <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
             </div>
         </div>
     </header>
 
-    <div class="mobile-nav" aria-hidden="true">
-        <button class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x"></i></button>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+        <div class="mobile-nav__top">
+            <a class="brand" href="index.html" aria-label="Nexus, home">
+                <span class="brand__mark brand__mark--paper">N</span>
+                <span>Nexus</span>
+            </a>
+            <button class="menu-btn mobile-nav__close">Close</button>
+        </div>
         <nav class="mobile-nav__links" aria-label="Mobile">
-            <a class="mobile-nav__link" href="index.html">Home</a>
-            <a class="mobile-nav__link" href="about.html" aria-current="true">About</a>
-            <a class="mobile-nav__link" href="pricing.html">Pricing</a>
-            <a class="mobile-nav__link" href="index.html#features">Features</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="download.html">Download</a>
         </nav>
         <div class="mobile-nav__actions">
-            <a class="btn btn--dark" href="signup.html">Open account</a>
-            <a class="btn btn--ghost" href="login.html">Log in</a>
+            <a class="btn btn--paper" href="signup.html">Open account</a>
+            <a class="btn btn--paper" href="login.html" style="background:none;color:#fff;outline:2px solid #fff;outline-offset:-2px">Log in</a>
         </div>
     </div>
 
     <main>
-        <!-- Mission -->
-        <section class="section" style="padding-top:clamp(6rem,13vw,10rem)">
-            <div class="container">
-                <div class="reveal" style="max-width:760px">
-                    <span class="eyebrow">Our mission</span>
-                    <h1 class="display display--lg">Rebuilding finance so it's <em>borderless, instant, and honest.</em></h1>
-                    <p class="lede" style="margin-top:1.6rem;max-width:60ch">
-                        Nexus started with a simple frustration: moving your own money should not be slow, opaque, or full of hidden fees. So we set out to build a system that works the way money actually should — fast, clear, and on your terms.
-                    </p>
+        <section class="field field--red hero" style="min-height:88svh">
+            <h1 class="hero__title display">
+                <span class="line line--paper"><span>Borderless</span></span>
+                <span class="line line--ink"><span>by default.</span></span>
+            </h1>
+            <div class="hero__foot">
+                <div class="hero__foot-inner">
+                    <p class="hero__lede">Nexus exists because moving your own money got slow, priced in percentages nobody explained, and settled at a rate chosen after you paid.</p>
+                    <a class="btn btn--paper" href="pricing.html">See the plans</a>
                 </div>
             </div>
         </section>
 
-        <!-- Values -->
-        <section class="section section--tint">
-            <div class="container">
-                <div class="grid grid--2">
-                    <article class="card reveal">
-                        <span class="card__icon"><i data-lucide="scale"></i></span>
-                        <h3>Integrity first</h3>
-                        <p>Our fee schedule is public and fixed. Every transfer shows exactly what it costs before you confirm it, and security is open to independent audits.</p>
-                    </article>
-                    <article class="card reveal">
-                        <span class="card__icon"><i data-lucide="sparkles"></i></span>
-                        <h3>Innovation, in service of users</h3>
-                        <p>From automatic insights to instant cross-border settlement, we build features that save you time and money — not features for their own sake.</p>
-                    </article>
+        <section class="field field--paper">
+            <p class="lead reveal" style="max-width:56ch">Nexus started as a question: why does a transfer take days, cost a slice nobody explained, and arrive with the rate chosen after you paid? The answer is not a faster bank. It is a system that shows you the price first and treats the rate as public knowledge, the same for you as for a treasury desk.</p>
+            <p class="body reveal" style="--d:.08s;max-width:56ch;margin-top:2rem;color:var(--muted)">This site is a design concept. The flows work in the browser, the figures are illustrative, and no banking services are offered.</p>
+        </section>
+
+        <section class="field field--surface">
+            <h2 class="head reveal" style="margin-bottom:2.6rem">What the concept commits to.</h2>
+            <div class="world__grid" style="grid-template-columns:repeat(4,1fr)">
+                <div class="shot reveal">
+                    <p class="plan__price num" data-count="150" data-suffix="+">150+</p>
+                    <p class="body" style="margin-top:.6rem">Countries and markets reachable from one account.</p>
                 </div>
+                <div class="shot reveal" style="--d:.06s">
+                    <p class="plan__price num" data-prefix="$" data-count="0">$0</p>
+                    <p class="body" style="margin-top:.6rem">A month for the Standard plan, for as long as you like.</p>
+                </div>
+                <div class="shot reveal" style="--d:.12s">
+                    <p class="plan__price num" data-count="0.41" data-decimals="2" data-suffix="%">0.41%</p>
+                    <p class="body" style="margin-top:.6rem">Per transfer, minimum £0.31, shown before you confirm.</p>
+                </div>
+                <div class="shot reveal" style="--d:.18s">
+                    <p class="plan__price num" data-count="1">1</p>
+                    <p class="body" style="margin-top:.6rem">Tap to freeze a lost card, from anywhere in the world.</p>
+                </div>
+            </div>
+            <p class="small reveal" style="--d:.24s;margin-top:2rem;color:var(--muted)">Product facts for the concept, not company metrics.</p>
+        </section>
+
+        <div class="qa">
+            <h3>The price is the price.</h3>
+            <p>The fee is calculated before you confirm and it does not change afterwards. If the mid-market rate is 0.79, that is the rate printed on your receipt. Weekends and small amounts follow the same rule.</p>
+        </div>
+        <div class="qa">
+            <h3>Your money is not our inventory.</h3>
+            <p>Balances would sit with regulated partner banks, never on Nexus's own balance sheet. Savings goals are yours to move at any moment, with no lock-ins and no exit fees.</p>
+        </div>
+        <div class="qa">
+            <h3>Built for the corridor, not the country.</h3>
+            <p>Most products price by where you live. Nexus prices by the corridor you actually use, so a transfer from London to Lagos costs what it costs, whoever you are.</p>
+        </div>
+
+        <section class="field field--paper">
+            <h2 class="head reveal" style="margin-bottom:2.6rem">The world it would serve.</h2>
+            <div class="world__grid">
+                <figure class="shot reveal">
+                    <img src="assets/aerial-view-of-shipping-containers-and-big.jpg" width="1920" height="1280" alt="Aerial view of container cranes at the Port of Tacoma" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--ink num">
+                        <div class="shot__row"><span>USD</span><span>Tacoma</span></div>
+                        <div class="shot__row"><span>Photo B. Harris</span><span>2017</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.06s">
+                    <img src="assets/piri-reis-world-map-01.jpg" width="1920" height="2560" alt="Detail of the Piri Reis world map, drawn in 1513" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--blue num">
+                        <div class="shot__row"><span>TRY</span><span>Istanbul</span></div>
+                        <div class="shot__row"><span>Map Piri Reis</span><span>1513</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.12s">
+                    <img src="assets/colorful-sky-with-orange-clouds-reflecting-in.jpg" width="1920" height="1280" alt="Orange clouds reflected in a paddy field at sunset in Laos" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--red num">
+                        <div class="shot__row"><span>LAK</span><span>Vientiane</span></div>
+                        <div class="shot__row"><span>Photo B. Morin</span><span>2020</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.18s">
+                    <img src="assets/world-map-1689.jpg" width="1920" height="1657" alt="Engraved world map by Gerard van Schagen, 1689" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--paper num">
+                        <div class="shot__row"><span>GBP</span><span>Everywhere</span></div>
+                        <div class="shot__row"><span>Map Gerard van Schagen</span><span>1689</span></div>
+                    </figcaption>
+                </figure>
             </div>
         </section>
 
-        <!-- Numbers -->
-        <section class="section">
-            <div class="container">
-                <div class="stat-grid">
-                    <div class="stat reveal"><span class="stat__num" data-count="2400" data-suffix="+">2,400+</span><span class="stat__label">People across 15 countries</span></div>
-                    <div class="stat reveal"><span class="stat__num" data-prefix="$" data-count="12" data-suffix="B+">$12B+</span><span class="stat__label">Money moved with us</span></div>
-                    <div class="stat reveal"><span class="stat__num" data-count="150" data-suffix="+">150+</span><span class="stat__label">Countries reachable</span></div>
-                    <div class="stat reveal"><span class="stat__num" data-count="99.9" data-suffix="%" data-decimals="1">99.9%</span><span class="stat__label">Uptime, year to date</span></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA -->
-        <section class="section" style="padding-top:0">
-            <div class="container" style="text-align:center">
-                <h2 class="display" style="max-width:20ch;margin-inline:auto">Come build the future of money with us.</h2>
-                <div class="hero__cta" style="justify-content:center">
-                    <a class="btn btn--primary btn--lg" href="signup.html">Open your account</a>
-                    <a class="btn btn--ghost btn--lg" href="pricing.html">View pricing</a>
-                </div>
+        <section class="field field--blue" style="display:flex;flex-direction:column;gap:2rem">
+            <h2 class="head reveal" style="max-width:14ch">The truth comes first.</h2>
+            <div class="reveal" style="--d:.08s;display:flex;gap:1rem;flex-wrap:wrap">
+                <a class="btn btn--paper" href="signup.html">Open your account</a>
+                <a class="btn btn--paper" href="index.html" style="background:none;color:#fff;outline:2px solid #fff;outline-offset:-2px">Back to home</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand">
-                    <a class="brand" href="index.html">
-                        <span class="brand__mark">N</span>
-                        <span class="brand__name">nexus<b>.</b></span>
-                    </a>
-                    <p>Nexus is a financial technology company, not a bank. Banking services are provided by our partner banks.</p>
-                </div>
-                <div class="footer__col">
-                    <h5>Products</h5>
-                    <ul>
-                        <li><a href="pricing.html">Cards</a></li>
-                        <li><a href="pricing.html">Savings</a></li>
-                        <li><a href="pricing.html">Transfers</a></li>
-                        <li><a href="download.html">Mobile app</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="index.html#features">Features</a></li>
-                        <li><a href="about.html">Careers</a></li>
-                        <li><a href="about.html">Press</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="about.html">Contact</a></li>
-                        <li><a href="download.html">Download</a></li>
-                        <li><a href="login.html">Log in</a></li>
-                        <li><a href="signup.html">Open account</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h5>Stay in the loop</h5>
-                    <p style="color:var(--muted);font-size:.9rem">Occasional updates on features and global launches. No spam.</p>
-                    <form class="newsletter" novalidate>
-                        <input class="input" type="email" placeholder="you@example.com" aria-label="Email address" required>
-                        <button class="btn btn--primary btn--sm" type="submit">Join</button>
-                    </form>
-                </div>
+    <footer class="foot">
+        <div class="foot__grid">
+            <div class="f-tile f-tile--deep">
+                <p>Nexus is a design concept for a consumer fintech, not a bank. In a real version, banking services would come from regulated partner banks.</p>
+                <p class="f-tile__legal">© 2026 Nexus Financial Technologies Inc. Privacy, terms and cookies would live here.</p>
             </div>
-            <div class="footer__base">
-                <span>© 2026 Nexus Financial Technologies Inc.</span>
-                <div class="footer__legal">
-                    <a href="#">Privacy policy</a>
-                    <a href="#">Terms of service</a>
-                    <a href="#">Cookie settings</a>
-                </div>
+            <nav class="f-tile f-tile--paper" aria-label="Footer">
+                <ul class="f-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="download.html">Download</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="signup.html">Open account</a></li>
+                </ul>
+            </nav>
+            <div class="f-tile f-tile--red f-time">
+                <span class="small">London office</span>
+                <b class="num" data-clock>--:--</b>
             </div>
+            <div class="f-tile f-tile--blue">
+                <span class="small">Say hello</span>
+                <a class="f-mail" href="mailto:agaboodevelop@gmail.com">agaboodevelop@gmail.com</a>
+            </div>
+            <div class="f-tile f-tile--word">
+                <b>Nexus.</b>
+            </div>
+            <a class="f-tile f-tile--invite" href="signup.html">
+                <span class="f-invite">
+                    <p>Open your account</p>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                        <path d="M6 18 18 6M8 6h10v10" stroke-width="2"/>
+                    </svg>
+                </span>
+            </a>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>

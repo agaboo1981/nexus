@@ -3,276 +3,381 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nexus is a modern account for spending, saving, and sending money across 150+ countries — with transparent fees and no surprises.">
-    <title>Nexus — Banking that just works, everywhere</title>
+    <meta name="description" content="Nexus is one account for spending, saving and sending money in 150+ countries. The fee shows before you confirm, every time.">
+    <meta name="theme-color" content="#ff3b1f">
+    <meta property="og:title" content="Nexus — Send money like a message">
+    <meta property="og:description" content="One account for 150+ countries. The fee shows before you confirm, every time.">
+    <meta property="og:image" content="assets/world-map-1689.jpg">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-weight='700' font-size='20' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+    <title>Nexus — Send money like a message</title>
     <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container nav">
-            <a class="brand" href="index.html" aria-label="Nexus — home">
-                <span class="brand__mark">N</span>
-                <span class="brand__name">nexus<b>.</b></span>
+    <header class="site-head">
+        <div class="bar">
+            <a class="brand" href="index.html" aria-label="Nexus, home">
+                <span class="brand__mark brand__mark--paper">N</span>
+                <span>Nexus</span>
             </a>
-            <nav class="nav__links" aria-label="Primary">
-                <a class="nav__link" href="about.html">About</a>
-                <a class="nav__link" href="pricing.html">Pricing</a>
-                <a class="nav__link" href="#features">Features</a>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="about.html">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="download.html">Download</a>
             </nav>
-            <div class="nav__actions">
-                <a class="nav__login" href="login.html">Log in</a>
-                <a class="btn btn--dark btn--sm" href="signup.html">Open account</a>
-                <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+            <div class="nav-actions">
+                <a class="nav-login" href="login.html">Log in</a>
+                <a class="btn btn--paper" href="signup.html">Open account</a>
+                <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
             </div>
         </div>
     </header>
 
-    <!-- Mobile nav -->
-    <div class="mobile-nav" aria-hidden="true">
-        <button class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x"></i></button>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+        <div class="mobile-nav__top">
+            <a class="brand" href="index.html" aria-label="Nexus, home">
+                <span class="brand__mark brand__mark--paper">N</span>
+                <span>Nexus</span>
+            </a>
+            <button class="menu-btn mobile-nav__close">Close</button>
+        </div>
         <nav class="mobile-nav__links" aria-label="Mobile">
-            <a class="mobile-nav__link" href="index.html" aria-current="true">Home</a>
-            <a class="mobile-nav__link" href="about.html">About</a>
-            <a class="mobile-nav__link" href="pricing.html">Pricing</a>
-            <a class="mobile-nav__link" href="#features">Features</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="download.html">Download</a>
         </nav>
         <div class="mobile-nav__actions">
-            <a class="btn btn--dark" href="signup.html">Open account</a>
-            <a class="btn btn--ghost" href="login.html">Log in</a>
+            <a class="btn btn--paper" href="signup.html">Open account</a>
+            <a class="btn btn--paper" href="login.html" style="background:none;color:#fff;outline:2px solid #fff;outline-offset:-2px">Log in</a>
         </div>
     </div>
 
     <main>
-        <!-- Hero -->
-        <section class="hero">
-            <div class="container hero__grid">
-                <div class="hero__copy reveal">
-                    <span class="eyebrow">Personal finance, rebuilt</span>
-                    <h1 class="display display--lg">Banking that just works, <em>everywhere</em>.</h1>
-                    <p class="lede">One account to spend, save, and send money across 150+ countries — with transparent fees and real-time clarity on every move.</p>
-                    <div class="hero__cta">
-                        <a class="btn btn--primary btn--lg" href="signup.html">Open your account <i data-lucide="arrow-right"></i></a>
-                        <a class="btn btn--ghost btn--lg" href="#features">See how it works</a>
-                    </div>
-                    <div class="hero__trust">
-                        <div class="trust__item"><span class="trust__label">Free forever</span><span class="trust__val">$0 / month</span></div>
-                        <div class="trust__item"><span class="trust__label">Countries served</span><span class="trust__val mononum">150+</span></div>
-                        <div class="trust__item"><span class="trust__label">App rating</span><span class="trust__val mononum">4.8 ★</span></div>
-                    </div>
-                </div>
-
-                <div class="reveal" data-ledger>
-                    <div class="ledger">
-                        <div class="ledger__topbar">
-                            <span class="ledger__title">Everyday account</span>
-                            <span class="ledger__live"><i class="ledger__pulse"></i>Live</span>
-                        </div>
-                        <div class="ledger__body">
-                            <div class="ledger__balance">
-                                <div>
-                                    <span class="eyebrow">Available balance</span>
-                                    <div class="amount mononum" data-balance>$18,420</div>
-                                    <span class="ledger__caption">Your USD balance, updating live</span>
-                                </div>
-                                <span class="delta">+1.6% this week</span>
-                            </div>
-
-                            <div class="ledger__transfer">
-                                <span class="eyebrow ledger__tlabel">Try it — send money</span>
-                                <div class="trow"><span>You send</span><b>GBP <input class="trow-input" data-tsend value="500" aria-label="Amount to send" inputmode="decimal"></b></div>
-                                <div class="trow"><span>Estimated fee</span><b class="mononum" data-tfee>$2.05</b></div>
-                                <div class="trow"><span>Rate</span><b class="mononum">1 GBP = $0.79</b></div>
-                                <div class="trow"><span>Recipient gets</span><b class="mononum" data-tgets>$392.87</b></div>
-                                <div class="trow trow--deduct"><span>Leaves your balance</span><b class="mononum" data-deduct>≈ $394.25</b></div>
-                            </div>
-
-                            <div class="ledger__chart">
-                                <div class="ledger__chart-head">
-                                    <span class="eyebrow">Your balance · last 60 days</span>
-                                    <span class="ledger__chart-hint">Hover</span>
-                                </div>
-                                <div data-chart></div>
-                                <table class="sr-only">
-                                    <caption>Daily USD balance, last 60 days</caption>
-                                    <thead><tr><th scope="col">Day</th><th scope="col">Balance</th></tr></thead>
-                                    <tbody>
-                                        <tr><td>60 days ago</td><td>$17,646</td></tr>
-                                        <tr><td>Today</td><td>$18,420</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+        <!-- 1 · Hero: one red field, two inks -->
+        <section class="field field--red hero">
+            <h1 class="hero__title display">
+                <span class="line line--paper"><span>Send money</span></span>
+                <span class="line line--ink"><span>like a message.</span></span>
+            </h1>
+            <div class="hero__foot">
+                <div class="hero__foot-inner">
+                    <a class="btn btn--paper" href="signup.html">Open your account</a>
+                    <p class="hero__lede">Nexus is one account for spending, saving and sending money in 150+ countries. The fee shows before you confirm, every time.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Proof / stats -->
-        <section class="section section--tint">
-            <div class="container">
-                <div class="stat-grid">
-                    <div class="stat reveal"><span class="stat__num" data-prefix="$" data-count="12" data-suffix="B+">$12B+</span><span class="stat__label">Processed across the network</span></div>
-                    <div class="stat reveal"><span class="stat__num" data-count="2" data-suffix="M+">2M+</span><span class="stat__label">People managing money here</span></div>
-                    <div class="stat reveal"><span class="stat__num" data-count="150" data-suffix="+">150+</span><span class="stat__label">Countries and markets</span></div>
-                    <div class="stat reveal"><span class="stat__num" data-count="99.9" data-suffix="%" data-decimals="1">99.9%</span><span class="stat__label">Service uptime</span></div>
+        <!-- 2 · Band: corridors, cropped at both edges -->
+        <section class="band" aria-label="Where Nexus works">
+            <div class="band__track" aria-hidden="true">
+                <span>London</span><i class="band__dot"></i><span>New York</span><i class="band__dot"></i><span>Tokyo</span><i class="band__dot"></i><span>Lagos</span><i class="band__dot"></i><span>São Paulo</span><i class="band__dot"></i><span>Mumbai</span><i class="band__dot"></i><span>Sydney</span><i class="band__dot"></i><span>Berlin</span><i class="band__dot"></i><span>Toronto</span><i class="band__dot"></i><span>Singapore</span><i class="band__dot"></i><span>Mexico City</span><i class="band__dot"></i><span>Nairobi</span><i class="band__dot"></i>
+                <span>London</span><i class="band__dot"></i><span>New York</span><i class="band__dot"></i><span>Tokyo</span><i class="band__dot"></i><span>Lagos</span><i class="band__dot"></i><span>São Paulo</span><i class="band__dot"></i><span>Mumbai</span><i class="band__dot"></i><span>Sydney</span><i class="band__dot"></i><span>Berlin</span><i class="band__dot"></i><span>Toronto</span><i class="band__dot"></i><span>Singapore</span><i class="band__dot"></i><span>Mexico City</span><i class="band__dot"></i><span>Nairobi</span><i class="band__dot"></i>
+            </div>
+            <p class="band__caption">One account for 150+ countries. These are a few of the corridors.</p>
+        </section>
+
+        <!-- 3 · Board: the live thing, as close-ups -->
+        <section class="field field--paper">
+            <p class="board__intro lead reveal">Everything below is the product itself, working. Type an amount and watch it cross.</p>
+            <div class="mosaic">
+                <div class="tile tile--blue t-a reveal" data-calc data-ui>
+                    <div class="calc">
+                        <div class="calc__in">
+                            <label for="send-amt">You send</label>
+                            <div class="calc__amt"><span>GBP</span><input id="send-amt" data-tsend value="500" inputmode="decimal" autocomplete="off"></div>
+                        </div>
+                        <dl>
+                            <div><dt>Estimated fee</dt><dd data-tfee>£2.05</dd></div>
+                            <div><dt>Rate</dt><dd>1 GBP = $0.79</dd></div>
+                            <div><dt>Recipient gets</dt><dd data-tgets>$392.87</dd></div>
+                            <div class="calc__total"><dt>Leaves your balance</dt><dd data-deduct>$394.25</dd></div>
+                        </dl>
+                    </div>
+                    <p class="tile__cap"><strong>Transfers</strong><span>The fee, before you confirm. Always this one first.</span></p>
+                </div>
+
+                <div class="tile tile--ink t-c reveal" style="--d:.06s" data-ui>
+                    <span class="balance__label">Available balance</span>
+                    <div class="balance__num num" data-balance>$18,420.35</div>
+                </div>
+
+                <div class="tile tile--paper t-b reveal" style="--d:.12s" data-ui>
+                    <div class="fig fig--board num">0.79</div>
+                    <p class="fig-cap">Mid-market rate, the same one the market sees.</p>
+                </div>
+
+                <div class="tile tile--surface t-f reveal" style="--d:.18s">
+                    <h2 class="head">Money, done right.</h2>
+                </div>
+
+                <div class="tile tile--red t-s reveal" data-ui>
+                    <label class="switch">
+                        <span class="switch__label">Freeze card</span>
+                        <input type="checkbox">
+                        <span aria-hidden="true"></span>
+                    </label>
+                    <p class="tile__cap"><strong>Control</strong><span>Frozen in one tap, back just as fast.</span></p>
+                </div>
+
+                <div class="tile tile--deep t-s reveal" style="--d:.06s" data-ui>
+                    <div class="discs" aria-hidden="true"><span>JR</span><span>AK</span><span>MT</span></div>
+                    <p class="tile__cap"><strong>Split bills</strong><span>Scan the dinner, settle in one tap.</span></p>
+                </div>
+
+                <div class="tile tile--paper t-s reveal" style="--d:.12s" data-ui>
+                    <div class="cats">
+                        <div><span>Transport</span><b class="num">£42.10</b></div>
+                        <div><span>Coffee</span><b class="num">£18.60</b></div>
+                        <div><span>Rent</span><b class="num">£640.00</b></div>
+                    </div>
+                    <p class="tile__cap"><strong>Spending, understood</strong><span>Every transaction filed as it lands.</span></p>
+                </div>
+
+                <div class="tile tile--ink t-s reveal" style="--d:.18s" data-ui>
+                    <div class="minicard" aria-hidden="true">
+                        <b>NEXUS</b>
+                        <span>•••• 4471 &nbsp; 09/29</span>
+                    </div>
+                    <p class="tile__cap"><strong>Virtual card</strong><span>A new one any time you want one.</span></p>
                 </div>
             </div>
         </section>
 
-        <!-- Features -->
-        <section class="section" id="features">
-            <div class="container">
-                <div class="sec-head reveal">
-                    <span class="eyebrow">The essentials</span>
-                    <h2>Everything you need to move money with confidence.</h2>
-                    <p>Built on the principle that finance should be simple and honest — no fine print, no surprise charges.</p>
+        <!-- 4 · Stages: red meets paper, one slider drives both -->
+        <section class="stages" data-stages aria-label="How it works">
+            <div class="stages__left">
+                <h2 class="stages__clause reveal">First, open it in minutes.</h2>
+            </div>
+            <div class="stages__right">
+                <div class="frag is-on" data-ui>
+                    <div class="frag__box">
+                        <div class="frag__row"><span>Sign up with</span><b>an email</b></div>
+                        <div class="frag__row"><span>Credit check</span><b>None</b></div>
+                        <div class="frag__row"><span>Time to first card</span><b>About 3 minutes</b></div>
+                    </div>
                 </div>
-                <div class="grid grid--3">
-                    <article class="card reveal">
-                        <span class="card__icon"><i data-lucide="chart-column"></i></span>
-                        <h3>Spending, understood</h3>
-                        <p>Every transaction is categorised automatically, so you always know where your money is going.</p>
+                <div class="frag" data-ui>
+                    <div class="frag__box">
+                        <div class="frag__row"><span>Add by</span><b>card or bank</b></div>
+                        <div class="frag__row"><span>Arrives</span><b>Instantly</b></div>
+                        <div class="frag__row"><span>Minimum</span><b>None</b></div>
+                    </div>
+                </div>
+                <div class="frag" data-ui>
+                    <div class="frag__box">
+                        <div class="frag__row"><span>Card</span><b>Virtual, instant</b></div>
+                        <div class="frag__row"><span>Works</span><b>Anywhere cards do</b></div>
+                        <div class="frag__row"><span>Freeze</span><b>One tap</b></div>
+                    </div>
+                </div>
+                <div class="frag" data-ui>
+                    <div class="frag__box">
+                        <div class="frag__row"><span>You send</span><b class="num">GBP 500</b></div>
+                        <div class="frag__row"><span>Fee, shown first</span><b class="num">£2.05</b></div>
+                        <div class="frag__row"><span>They get</span><b class="num">$392.87</b></div>
+                    </div>
+                </div>
+            </div>
+            <div class="stages__slider">
+                <input type="range" min="0" max="3" step="1" value="0" aria-label="How it works, step by step">
+                <div class="stages__names">
+                    <span>Open</span><span>Add money</span><span>Spend</span><span>Send</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5 · World: photo tiles with label strips -->
+        <section class="field field--surface">
+            <h2 class="head world__head reveal">Where it works.</h2>
+            <div class="world__grid">
+                <figure class="shot reveal">
+                    <img src="assets/aerial-view-of-shipping-containers-and-big.jpg" width="1920" height="1280" alt="Aerial view of container cranes at the Port of Tacoma" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--ink num">
+                        <div class="shot__row"><span>USD</span><span>Tacoma</span></div>
+                        <div class="shot__row"><span>Corridor 1 of 150</span><span>0.79</span></div>
+                        <div class="shot__row"><span>Photo B. Harris</span><span>2017</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.06s">
+                    <img src="assets/container-cranes-at-antwerp-harbor-close-up.jpg" width="1920" height="1440" alt="Container cranes close up at the port of Antwerp" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--blue num">
+                        <div class="shot__row"><span>EUR</span><span>Antwerp</span></div>
+                        <div class="shot__row"><span>Corridor 2 of 150</span><span>1.08</span></div>
+                        <div class="shot__row"><span>Photo A. van Beem</span><span>2005</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.12s">
+                    <img src="assets/world-map-1689.jpg" width="1920" height="1657" alt="Engraved world map by Gerard van Schagen, 1689" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--red num">
+                        <div class="shot__row"><span>GBP</span><span>Everywhere</span></div>
+                        <div class="shot__row"><span>Corridor 3 of 150</span><span>1.27</span></div>
+                        <div class="shot__row"><span>Map G. van Schagen</span><span>1689</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.18s">
+                    <img src="assets/a-general-map-of-the-world-or.jpg" width="1920" height="1617" alt="Double hemisphere world map published by Samuel Dunn, engraved by Thomas Kitchin, 1794" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--paper num">
+                        <div class="shot__row"><span>JPY</span><span>Tokyo</span></div>
+                        <div class="shot__row"><span>Corridor 4 of 150</span><span>157.1</span></div>
+                        <div class="shot__row"><span>Map T. Kitchin</span><span>1794</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal">
+                    <img src="assets/piri-reis-world-map-01.jpg" width="1920" height="2560" alt="Detail of the Piri Reis world map, drawn in 1513" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--deep num">
+                        <div class="shot__row"><span>TRY</span><span>Istanbul</span></div>
+                        <div class="shot__row"><span>Corridor 5 of 150</span><span>34.2</span></div>
+                        <div class="shot__row"><span>Map Piri Reis</span><span>1513</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.06s">
+                    <img src="assets/colorful-sky-with-orange-clouds-reflecting-in.jpg" width="1920" height="1280" alt="Orange clouds reflected in a paddy field at sunset in Laos" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--ink num">
+                        <div class="shot__row"><span>LAK</span><span>Vientiane</span></div>
+                        <div class="shot__row"><span>Corridor 6 of 150</span><span>21,800</span></div>
+                        <div class="shot__row"><span>Photo B. Morin</span><span>2020</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.12s">
+                    <img src="assets/pirogue-running-on-the-mekong-at-sunset.jpg" width="1920" height="1080" alt="A pirogue on the Mekong at sunset with pink clouds" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--blue num">
+                        <div class="shot__row"><span>LAK</span><span>Don Det</span></div>
+                        <div class="shot__row"><span>Corridor 7 of 150</span><span>21,800</span></div>
+                        <div class="shot__row"><span>Photo B. Morin</span><span>2021</span></div>
+                    </figcaption>
+                </figure>
+                <div class="shot shot--word reveal" style="--d:.18s">
+                    <p>150+ countries, one rate, no weekend markup.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6 · Plans: three flat tiles that step up -->
+        <section class="field field--paper">
+            <div class="plans-wrap">
+                <h2 class="head reveal">Three plans. No surprises.</h2>
+                <div class="billing reveal" role="group" aria-label="Billing period" data-billing>
+                    <button type="button" data-billing="monthly" class="is-active">Monthly</button>
+                    <button type="button" data-billing="yearly">Yearly, 10% off</button>
+                </div>
+                <div class="plans">
+                    <article class="plan plan--1 reveal">
+                        <h3 class="plan__name">Standard</h3>
+                        <p class="plan__price num"><span data-monthly="$0" data-yearly="$0">$0</span><small> / month</small></p>
+                        <ul>
+                            <li>Free virtual card</li>
+                            <li>Mid-market rate on transfers</li>
+                            <li>Spending filed automatically</li>
+                            <li>Instant bill splitting</li>
+                        </ul>
+                        <a class="btn btn--accent" href="signup.html">Choose Standard</a>
                     </article>
-                    <article class="card reveal">
-                        <span class="card__icon"><i data-lucide="globe"></i></span>
-                        <h3>Global transfers, fair exchange</h3>
-                        <p>Send to 150+ countries at the real mid-market rate. The fee is shown before you confirm, always.</p>
+                    <article class="plan plan--2 reveal" style="--d:.06s">
+                        <h3 class="plan__name">Premium</h3>
+                        <p class="plan__price num"><span data-monthly="$9.99" data-yearly="$8.99">$9.99</span><small data-monthly=" / month" data-yearly=" / month, billed yearly"> / month</small></p>
+                        <ul>
+                            <li>Everything in Standard</li>
+                            <li>Transfer fee capped at £1</li>
+                            <li>Metal card in your colour</li>
+                            <li>Four airport lounge visits a year</li>
+                        </ul>
+                        <a class="btn btn--paper" href="signup.html">Choose Premium</a>
                     </article>
-                    <article class="card reveal">
-                        <span class="card__icon"><i data-lucide="wallet"></i></span>
-                        <h3>Savings that stay yours</h3>
-                        <p>Set a savings goal or an automatic rule, and watch it build. Funds are yours to move any time.</p>
+                    <article class="plan plan--3 reveal" style="--d:.12s">
+                        <h3 class="plan__name">Black</h3>
+                        <p class="plan__price num"><span data-monthly="$29.99" data-yearly="$26.99">$29.99</span><small data-monthly=" / month" data-yearly=" / month, billed yearly"> / month</small></p>
+                        <ul>
+                            <li>Everything in Premium</li>
+                            <li>Fee-free transfers worldwide</li>
+                            <li>Travel insurance included</li>
+                            <li>24/7 concierge on chat</li>
+                        </ul>
+                        <a class="btn btn--paper" href="signup.html">Choose Black</a>
                     </article>
                 </div>
+                <p class="plans-note reveal">Every plan carries the same transfer fee of 0.41% with a £0.31 minimum, shown before you confirm. Switch plans or cancel any time.</p>
             </div>
         </section>
 
-        <!-- How it works -->
-        <section class="section section--tint">
-            <div class="container">
-                <div class="sec-head reveal">
-                    <span class="eyebrow">How it works</span>
-                    <h2>Open in minutes. No credit check, no waiting.</h2>
-                </div>
-                <div class="grid grid--3">
-                    <div class="step reveal">
-                        <span class="step__idx">01</span>
-                        <div><h3>Enter a few details</h3><p>Create your account with an email and verify your identity. That's it.</p></div>
-                    </div>
-                    <div class="step reveal">
-                        <span class="step__idx">02</span>
-                        <div><h3>Add money</h3><p>Link a card or bank account and move funds over in a couple of taps.</p></div>
-                    </div>
-                    <div class="step reveal">
-                        <span class="step__idx">03</span>
-                        <div><h3>Spend and send</h3><p>Use your card anywhere, or send money abroad at the live rate.</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- 7 · FAQ: a band per question -->
+        <h2 class="faq__head"><span>Asked, answered.</span></h2>
+        <div class="qa">
+            <h3>Is Nexus a real bank?</h3>
+            <p>No. Nexus is a design concept for a consumer fintech. In a real version, banking services would be provided by regulated partner banks, and Nexus itself would not hold your deposit.</p>
+        </div>
+        <div class="qa">
+            <h3>What does a transfer cost?</h3>
+            <p>0.41% of the amount, with a minimum of £0.31. The figure is calculated and shown before you confirm, and it does not change afterwards. There is no weekend markup.</p>
+        </div>
+        <div class="qa">
+            <h3>Where does the rate come from?</h3>
+            <p>The mid-market rate, the same one you see on a currency board or a financial data feed. Nexus takes no margin on the rate itself; the fee is separate and visible.</p>
+        </div>
+        <div class="qa">
+            <h3>How fast does money arrive?</h3>
+            <p>The concept target is seconds on major corridors and a few hours on the rest. The app shows the estimate for your corridor before you send, not after.</p>
+        </div>
+        <div class="qa">
+            <h3>Can I open an account today?</h3>
+            <p>Not yet. The sign-up and login flows on this site are part of the design demo. Nothing you type is stored or sent anywhere.</p>
+        </div>
 
-        <!-- App / CTA -->
-        <section class="section section--navy">
-            <div class="container cta-grid">
-                <div class="reveal">
-                    <span class="eyebrow">Get the app</span>
-                    <h2 class="display" style="color:#fff">Your money, in your pocket.</h2>
-                    <p class="lede" style="margin-top:1.25rem; color:rgba(255,255,255,.72)">Issue a virtual card instantly, freeze a lost card, split a bill, and watch spending land in real time — all from your phone.</p>
-                    <div class="store-row">
-                        <a href="download.html" class="store-btn store-btn--light"><i data-lucide="apple"></i><span><span class="lbl">Download on the</span><span class="sub">App Store</span></span></a>
-                        <a href="download.html" class="store-btn" style="background:transparent;border:1px solid rgba(255,255,255,.25)"><i data-lucide="play"></i><span><span class="lbl">Get it on</span><span class="sub">Google Play</span></span></a>
-                    </div>
-                </div>
-                <div class="reveal">
-                    <div class="ledger">
-                        <div class="ledger__topbar">
-                            <div class="ledger__dots"><span></span><span></span><span></span></div>
-                            <span class="ledger__title">On your phone</span>
-                        </div>
-                        <div class="ledger__body">
-                            <div class="phone-row">
-                                <span class="n"><i data-lucide="credit-card"></i></span>
-                                <div><h4>Virtual card your way</h4><p>Create a disposable card with its own limits, any time.</p></div>
-                            </div>
-                            <div class="phone-row">
-                                <span class="n"><i data-lucide="users"></i></span>
-                                <div><h4>Split bills together</h4><p>Scan a dinner, invite friends, and settle in one tap.</p></div>
-                            </div>
-                            <div class="phone-row">
-                                <span class="n"><i data-lucide="lock"></i></span>
-                                <div><h4>Control in real time</h4><p>Freeze a card, set limits, and review every charge instantly.</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <!-- 8 · CTA: a sentence with a blank -->
+        <section class="field field--blue cta">
+            <form data-demo novalidate>
+                <p class="cta__sentence">
+                    <label for="cta-email">Send my invite to</label>
+                    <input class="gap" id="cta-email" type="email" name="email" placeholder="you@example.com" autocomplete="email">
+                    <button type="submit">today</button>
+                </p>
+                <p class="cta__note">One email when Nexus opens, no spam. This is a design concept, so nothing is actually sent.</p>
+                <p class="form-msg" aria-live="polite"></p>
+            </form>
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer__grid">
-                <div class="footer__brand">
-                    <a class="brand" href="index.html">
-                        <span class="brand__mark">N</span>
-                        <span class="brand__name">nexus<b>.</b></span>
-                    </a>
-                    <p>Nexus is a financial technology company, not a bank. Banking services are provided by our partner banks.</p>
-                </div>
-                <div class="footer__col">
-                    <h5>Products</h5>
-                    <ul>
-                        <li><a href="pricing.html">Cards</a></li>
-                        <li><a href="pricing.html">Savings</a></li>
-                        <li><a href="pricing.html">Transfers</a></li>
-                        <li><a href="download.html">Mobile app</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="#features">Features</a></li>
-                        <li><a href="about.html">Careers</a></li>
-                        <li><a href="about.html">Press</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h5>Company</h5>
-                    <ul>
-                        <li><a href="about.html">Contact</a></li>
-                        <li><a href="download.html">Download</a></li>
-                        <li><a href="login.html">Log in</a></li>
-                        <li><a href="signup.html">Open account</a></li>
-                    </ul>
-                </div>
-                <div class="footer__col">
-                    <h5>Stay in the loop</h5>
-                    <p style="color:var(--muted);font-size:.9rem">Occasional updates on features and global launches. No spam.</p>
-                    <form class="newsletter" novalidate>
-                        <input class="input" type="email" placeholder="you@example.com" aria-label="Email address" required>
-                        <button class="btn btn--primary btn--sm" type="submit">Join</button>
-                    </form>
-                </div>
+    <!-- 9 · Footer: the last two rows of the board -->
+    <footer class="foot">
+        <div class="foot__grid">
+            <div class="f-tile f-tile--deep">
+                <p>Nexus is a design concept for a consumer fintech, not a bank. In a real version, banking services would come from regulated partner banks.</p>
+                <p class="f-tile__legal">© 2026 Nexus Financial Technologies Inc. Privacy, terms and cookies would live here.</p>
             </div>
-            <div class="footer__base">
-                <span>© 2026 Nexus Financial Technologies Inc.</span>
-                <div class="footer__legal">
-                    <a href="#">Privacy policy</a>
-                    <a href="#">Terms of service</a>
-                    <a href="#">Cookie settings</a>
-                </div>
+            <nav class="f-tile f-tile--paper" aria-label="Footer">
+                <ul class="f-nav">
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="download.html">Download</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="signup.html">Open account</a></li>
+                </ul>
+            </nav>
+            <div class="f-tile f-tile--red f-time">
+                <span class="small">London office</span>
+                <b class="num" data-clock>--:--</b>
             </div>
+            <div class="f-tile f-tile--blue">
+                <span class="small">Say hello</span>
+                <a class="f-mail" href="mailto:agaboodevelop@gmail.com">agaboodevelop@gmail.com</a>
+            </div>
+            <div class="f-tile f-tile--word">
+                <b>Nexus.</b>
+            </div>
+            <a class="f-tile f-tile--invite" href="signup.html">
+                <span class="f-invite">
+                    <p>Open your account</p>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                        <path d="M6 18 18 6M8 6h10v10" stroke-width="2"/>
+                    </svg>
+                </span>
+            </a>
         </div>
     </footer>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="module" src="js/script.js"></script>
 </body>
 </html>

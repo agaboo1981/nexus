@@ -3,65 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Download the Nexus app for iOS and Android. Banking, cards, and transfers on the go.">
+    <meta name="description" content="The Nexus app: your card, your transfers and your spending controls, in your pocket.">
+    <meta name="theme-color" content="#050a5c">
+    <meta property="og:title" content="Nexus — Your money, in your pocket">
+    <meta property="og:description" content="Issue a virtual card instantly, freeze a lost card, split a bill, watch spending land in real time.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230a0a0a'/%3E%3Ctext x='16' y='23' font-family='sans-serif' font-weight='700' font-size='20' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
     <title>Download — Nexus</title>
     <script>document.documentElement.classList.add('js');</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="container nav">
-            <a class="brand" href="index.html" aria-label="Nexus — home">
-                <span class="brand__mark">N</span>
-                <span class="brand__name">nexus<b>.</b></span>
+    <header class="site-head">
+        <div class="bar">
+            <a class="brand" href="index.html" aria-label="Nexus, home">
+                <span class="brand__mark brand__mark--paper">N</span>
+                <span>Nexus</span>
             </a>
-            <div class="nav__actions">
-                <a class="btn btn--dark btn--sm" href="signup.html">Open account</a>
-                <button class="nav__toggle" aria-label="Open menu" aria-expanded="false"><i data-lucide="menu"></i></button>
+            <nav class="nav-links" aria-label="Primary">
+                <a href="about.html">About</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="download.html" aria-current="page">Download</a>
+            </nav>
+            <div class="nav-actions">
+                <a class="nav-login" href="login.html">Log in</a>
+                <a class="btn btn--paper" href="signup.html">Open account</a>
+                <button class="menu-btn" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
             </div>
         </div>
     </header>
 
-    <div class="mobile-nav" aria-hidden="true">
-        <button class="mobile-nav__close" aria-label="Close menu"><i data-lucide="x"></i></button>
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+        <div class="mobile-nav__top">
+            <a class="brand" href="index.html" aria-label="Nexus, home">
+                <span class="brand__mark brand__mark--paper">N</span>
+                <span>Nexus</span>
+            </a>
+            <button class="menu-btn mobile-nav__close">Close</button>
+        </div>
         <nav class="mobile-nav__links" aria-label="Mobile">
-            <a class="mobile-nav__link" href="index.html">Home</a>
-            <a class="mobile-nav__link" href="about.html">About</a>
-            <a class="mobile-nav__link" href="pricing.html">Pricing</a>
-            <a class="mobile-nav__link" href="index.html#features">Features</a>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="pricing.html">Pricing</a>
+            <a href="download.html">Download</a>
         </nav>
         <div class="mobile-nav__actions">
-            <a class="btn btn--dark" href="signup.html">Open account</a>
-            <a class="btn btn--ghost" href="login.html">Log in</a>
+            <a class="btn btn--paper" href="signup.html">Open account</a>
+            <a class="btn btn--paper" href="login.html" style="background:none;color:#fff;outline:2px solid #fff;outline-offset:-2px">Log in</a>
         </div>
     </div>
 
-    <main class="section" style="padding-top:calc(72px + clamp(3rem,8vw,6rem))">
-        <div class="container">
-            <div class="dl-card reveal" style="max-width:720px;margin-inline:auto">
-                <span class="card__icon" style="margin-inline:auto;width:56px;height:56px"><i data-lucide="smartphone" style="width:24px;height:24px"></i></span>
-                <h2 class="display" style="margin:.25rem auto 1rem">Banking is better on your phone.</h2>
-                <p class="lede" style="max-width:46ch;margin-inline:auto">
-                    For the best experience and security, your cards, transfers, and spending controls live in the Nexus mobile app.
-                </p>
-                <div class="store-row" style="justify-content:center;margin-top:2.25rem">
-                    <a href="#" class="store-btn"><i data-lucide="apple"></i><span><span class="lbl">Download on the</span><span class="sub">App Store</span></span></a>
-                    <a href="#" class="store-btn" style="background:#fff;color:var(--ink);border:1px solid var(--hairline)"><i data-lucide="play" style="color:var(--accent)"></i><span><span class="lbl">Get it on</span><span class="sub">Google Play</span></span></a>
-                </div>
-                <div class="auth__badges" style="justify-content:center;margin-top:2rem">
-                    <span><i data-lucide="qr-code"></i>Or scan the QR code on desktop</span>
+    <main>
+        <section class="field field--deep hero" style="min-height:92svh">
+            <h1 class="hero__title display">
+                <span class="line line--paper"><span>Your money,</span></span>
+                <span class="line line--paper"><span>in your pocket.</span></span>
+            </h1>
+            <div class="hero__foot">
+                <div class="hero__foot-inner">
+                    <p class="hero__lede">Issue a virtual card instantly, freeze a lost card, split a bill, and watch spending land in real time. The app is where the account lives.</p>
+                    <div style="display:flex;gap:.9rem;flex-wrap:wrap">
+                        <a class="btn btn--paper" href="#">Download for iOS</a>
+                        <a class="btn btn--paper" href="#">Download for Android</a>
+                    </div>
+                    <p class="small" style="opacity:.75">A concept, so the store links are placeholders.</p>
                 </div>
             </div>
-            <div style="text-align:center;margin-top:2.5rem">
-                <a class="link" href="index.html"><i data-lucide="arrow-left" style="width:1rem;height:1rem"></i>Back to homepage</a>
+        </section>
+
+        <section class="field field--paper">
+            <h2 class="head reveal" style="margin-bottom:2.6rem">What the app does first.</h2>
+            <div class="world__grid" style="margin-bottom:3rem">
+                <figure class="shot reveal">
+                    <img src="assets/pirogue-running-on-the-mekong-at-sunset.jpg" width="1920" height="1080" alt="A pirogue crossing the Mekong at sunset" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--blue num">
+                        <div class="shot__row"><span>LAK</span><span>Don Det</span></div>
+                        <div class="shot__row"><span>Photo B. Morin</span><span>2021</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.06s">
+                    <img src="assets/water-reflection-of-stringy-gray-and-white.jpg" width="1920" height="1280" alt="Clouds reflected in still water at sunrise" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--ink num">
+                        <div class="shot__row"><span>USD</span><span>Anywhere</span></div>
+                        <div class="shot__row"><span>Photo B. Morin</span><span>2022</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.12s">
+                    <img src="assets/container-cranes-at-antwerp-harbor-close-up.jpg" width="1920" height="1440" alt="Container cranes close up at the port of Antwerp" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--paper num">
+                        <div class="shot__row"><span>EUR</span><span>Antwerp</span></div>
+                        <div class="shot__row"><span>Photo A. van Beem</span><span>2005</span></div>
+                    </figcaption>
+                </figure>
+                <figure class="shot reveal" style="--d:.18s">
+                    <img src="assets/colorful-clouds-and-blue-sky-with-water.jpg" width="1920" height="1200" alt="Clouds and blue sky reflected in still water at sunrise" loading="lazy" decoding="async">
+                    <figcaption class="shot__strip shot__strip--red num">
+                        <div class="shot__row"><span>USD</span><span>Anywhere</span></div>
+                        <div class="shot__row"><span>Photo B. Morin</span><span>2022</span></div>
+                    </figcaption>
+                </figure>
             </div>
-        </div>
+            <div class="qa reveal" style="padding-inline:0">
+                <h3>A card in seconds</h3>
+                <p>Create a disposable virtual card with its own limits the moment you need one, and delete it when the job is done.</p>
+            </div>
+            <div class="qa reveal" style="padding-inline:0;--d:.06s">
+                <h3>A bill, split</h3>
+                <p>Scan the dinner, invite the table, and everyone settles in one tap with the fee already shown.</p>
+            </div>
+            <div class="qa reveal" style="padding-inline:0;--d:.12s">
+                <h3>Control in real time</h3>
+                <p>Freeze a card, set a monthly limit, and review every charge as it lands, wherever you are.</p>
+            </div>
+        </section>
     </main>
 
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <footer class="foot">
+        <div class="foot__grid">
+            <div class="f-tile f-tile--deep">
+                <p>Nexus is a design concept for a consumer fintech, not a bank. In a real version, banking services would come from regulated partner banks.</p>
+                <p class="f-tile__legal">© 2026 Nexus Financial Technologies Inc. Privacy, terms and cookies would live here.</p>
+            </div>
+            <nav class="f-tile f-tile--paper" aria-label="Footer">
+                <ul class="f-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="login.html">Log in</a></li>
+                    <li><a href="signup.html">Open account</a></li>
+                </ul>
+            </nav>
+            <div class="f-tile f-tile--red f-time">
+                <span class="small">London office</span>
+                <b class="num" data-clock>--:--</b>
+            </div>
+            <div class="f-tile f-tile--blue">
+                <span class="small">Say hello</span>
+                <a class="f-mail" href="mailto:agaboodevelop@gmail.com">agaboodevelop@gmail.com</a>
+            </div>
+            <div class="f-tile f-tile--word">
+                <b>Nexus.</b>
+            </div>
+            <a class="f-tile f-tile--invite" href="signup.html">
+                <span class="f-invite">
+                    <p>Open your account</p>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+                        <path d="M6 18 18 6M8 6h10v10" stroke-width="2"/>
+                    </svg>
+                </span>
+            </a>
+        </div>
+    </footer>
+
     <script type="module" src="js/script.js"></script>
 </body>
 </html>
